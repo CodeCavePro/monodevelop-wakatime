@@ -1,0 +1,15 @@
+<ExtensionModel>
+
+	<!-- Extensions -->
+	
+	<Extension path = "/MonoDevelop/Ide/Commands">
+		<Command id = "MonoDevelop.WakaTime.Commands.ShowSettingsWindow"
+		         defaultHandler = "MonoDevelop.WakaTime.ShowSettingsWindowHandler"
+		         _label = "WakaTime Settings" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/Ide/MainMenu/Tools">
+		<CommandItem id = "MonoDevelop.WakaTime.Commands.ShowSettingsWindow" insertbefore="OptionsSection" />
+	</Extension>
+
+</ExtensionModel>
