@@ -1,3 +1,0 @@
-[submodule "src/Salaros.Config.Ini"]
-	path = src/Salaros.Config.Ini
-	url = https://github.com/salaros/IniParser.git
