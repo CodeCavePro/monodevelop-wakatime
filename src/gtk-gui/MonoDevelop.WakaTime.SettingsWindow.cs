@@ -8,17 +8,21 @@ namespace MonoDevelop.WakaTime
 		
 		private global::Gtk.Table panelBody;
 		
-		private global::Gtk.Label labApiKey;
+		private global::Gtk.CheckButton chkDebugMode;
 		
-		private global::Gtk.Label labProxyAddress;
+		private global::Gtk.Label labAPIKey;
 		
-		private global::Gtk.Entry txtApiKey;
+		private global::Gtk.Label labProxy;
 		
-		private global::Gtk.Entry txtProxyAddress;
+		private global::Gtk.Entry txtAPIKey;
+		
+		private global::Gtk.Label txtDebugMode;
+		
+		private global::Gtk.Entry txtProxy;
 		
 		private global::Gtk.HBox panelBottom;
 		
-		private global::Gtk.Fixed fixed2;
+		private global::Gtk.Fixed panelFixed;
 		
 		private global::Gtk.Button btnOk;
 
@@ -28,94 +32,117 @@ namespace MonoDevelop.WakaTime
 			// Widget MonoDevelop.WakaTime.SettingsWindow
 			this.Name = "MonoDevelop.WakaTime.SettingsWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString ("WakaTime Settings");
-			this.TypeHint = ((global::Gdk.WindowTypeHint)(1));
 			this.WindowPosition = ((global::Gtk.WindowPosition)(3));
-			this.Modal = true;
+			this.BorderWidth = ((uint)(1));
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 60;
 			// Container child MonoDevelop.WakaTime.SettingsWindow.Gtk.Container+ContainerChild
 			this.panelMain = new global::Gtk.VBox ();
 			this.panelMain.Name = "panelMain";
-			this.panelMain.Spacing = 6;
+			this.panelMain.Spacing = 5;
 			this.panelMain.BorderWidth = ((uint)(2));
 			// Container child panelMain.Gtk.Box+BoxChild
-			this.panelBody = new global::Gtk.Table (((uint)(2)), ((uint)(2)), false);
+			this.panelBody = new global::Gtk.Table (((uint)(3)), ((uint)(2)), false);
 			this.panelBody.Name = "panelBody";
 			this.panelBody.RowSpacing = ((uint)(6));
 			this.panelBody.ColumnSpacing = ((uint)(1));
 			// Container child panelBody.Gtk.Table+TableChild
-			this.labApiKey = new global::Gtk.Label ();
-			this.labApiKey.Name = "labApiKey";
-			this.labApiKey.LabelProp = global::Mono.Unix.Catalog.GetString ("API key");
-			this.panelBody.Add (this.labApiKey);
-			global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.panelBody [this.labApiKey]));
-			w1.XOptions = ((global::Gtk.AttachOptions)(4));
+			this.chkDebugMode = new global::Gtk.CheckButton ();
+			this.chkDebugMode.CanFocus = true;
+			this.chkDebugMode.Name = "chkDebugMode";
+			this.chkDebugMode.Label = "";
+			this.chkDebugMode.DrawIndicator = true;
+			this.chkDebugMode.UseUnderline = true;
+			this.panelBody.Add (this.chkDebugMode);
+			global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.panelBody [this.chkDebugMode]));
+			w1.TopAttach = ((uint)(2));
+			w1.BottomAttach = ((uint)(3));
+			w1.LeftAttach = ((uint)(1));
+			w1.RightAttach = ((uint)(2));
 			w1.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child panelBody.Gtk.Table+TableChild
-			this.labProxyAddress = new global::Gtk.Label ();
-			this.labProxyAddress.Name = "labProxyAddress";
-			this.labProxyAddress.LabelProp = global::Mono.Unix.Catalog.GetString ("Proxy");
-			this.panelBody.Add (this.labProxyAddress);
-			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.panelBody [this.labProxyAddress]));
-			w2.TopAttach = ((uint)(1));
-			w2.BottomAttach = ((uint)(2));
+			this.labAPIKey = new global::Gtk.Label ();
+			this.labAPIKey.Name = "labAPIKey";
+			this.labAPIKey.LabelProp = global::Mono.Unix.Catalog.GetString ("API key");
+			this.panelBody.Add (this.labAPIKey);
+			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.panelBody [this.labAPIKey]));
 			w2.XOptions = ((global::Gtk.AttachOptions)(4));
 			w2.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child panelBody.Gtk.Table+TableChild
-			this.txtApiKey = new global::Gtk.Entry ();
-			this.txtApiKey.CanFocus = true;
-			this.txtApiKey.Name = "txtApiKey";
-			this.txtApiKey.IsEditable = true;
-			this.txtApiKey.InvisibleChar = '●';
-			this.panelBody.Add (this.txtApiKey);
-			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.panelBody [this.txtApiKey]));
-			w3.LeftAttach = ((uint)(1));
-			w3.RightAttach = ((uint)(2));
+			this.labProxy = new global::Gtk.Label ();
+			this.labProxy.Name = "labProxy";
+			this.labProxy.LabelProp = global::Mono.Unix.Catalog.GetString ("Proxy");
+			this.panelBody.Add (this.labProxy);
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.panelBody [this.labProxy]));
+			w3.TopAttach = ((uint)(1));
+			w3.BottomAttach = ((uint)(2));
+			w3.XOptions = ((global::Gtk.AttachOptions)(4));
 			w3.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child panelBody.Gtk.Table+TableChild
-			this.txtProxyAddress = new global::Gtk.Entry ();
-			this.txtProxyAddress.CanFocus = true;
-			this.txtProxyAddress.Name = "txtProxyAddress";
-			this.txtProxyAddress.IsEditable = true;
-			this.txtProxyAddress.InvisibleChar = '●';
-			this.panelBody.Add (this.txtProxyAddress);
-			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.panelBody [this.txtProxyAddress]));
-			w4.TopAttach = ((uint)(1));
-			w4.BottomAttach = ((uint)(2));
+			this.txtAPIKey = new global::Gtk.Entry ();
+			this.txtAPIKey.CanFocus = true;
+			this.txtAPIKey.Name = "txtAPIKey";
+			this.txtAPIKey.IsEditable = true;
+			this.txtAPIKey.InvisibleChar = '●';
+			this.panelBody.Add (this.txtAPIKey);
+			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.panelBody [this.txtAPIKey]));
 			w4.LeftAttach = ((uint)(1));
 			w4.RightAttach = ((uint)(2));
 			w4.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child panelBody.Gtk.Table+TableChild
+			this.txtDebugMode = new global::Gtk.Label ();
+			this.txtDebugMode.Name = "txtDebugMode";
+			this.txtDebugMode.LabelProp = global::Mono.Unix.Catalog.GetString ("Debug");
+			this.panelBody.Add (this.txtDebugMode);
+			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.panelBody [this.txtDebugMode]));
+			w5.TopAttach = ((uint)(2));
+			w5.BottomAttach = ((uint)(3));
+			w5.XOptions = ((global::Gtk.AttachOptions)(4));
+			w5.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child panelBody.Gtk.Table+TableChild
+			this.txtProxy = new global::Gtk.Entry ();
+			this.txtProxy.CanFocus = true;
+			this.txtProxy.Name = "txtProxy";
+			this.txtProxy.IsEditable = true;
+			this.txtProxy.InvisibleChar = '●';
+			this.panelBody.Add (this.txtProxy);
+			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.panelBody [this.txtProxy]));
+			w6.TopAttach = ((uint)(1));
+			w6.BottomAttach = ((uint)(2));
+			w6.LeftAttach = ((uint)(1));
+			w6.RightAttach = ((uint)(2));
+			w6.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.panelMain.Add (this.panelBody);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.panelMain [this.panelBody]));
-			w5.Position = 0;
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.panelMain [this.panelBody]));
+			w7.Position = 0;
 			// Container child panelMain.Gtk.Box+BoxChild
 			this.panelBottom = new global::Gtk.HBox ();
 			this.panelBottom.Name = "panelBottom";
 			this.panelBottom.Spacing = 6;
 			// Container child panelBottom.Gtk.Box+BoxChild
-			this.fixed2 = new global::Gtk.Fixed ();
-			this.fixed2.Name = "fixed2";
-			this.fixed2.HasWindow = false;
-			this.panelBottom.Add (this.fixed2);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.panelBottom [this.fixed2]));
-			w6.Position = 0;
+			this.panelFixed = new global::Gtk.Fixed ();
+			this.panelFixed.Name = "panelFixed";
+			this.panelFixed.HasWindow = false;
+			this.panelBottom.Add (this.panelFixed);
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.panelBottom [this.panelFixed]));
+			w8.Position = 0;
 			// Container child panelBottom.Gtk.Box+BoxChild
 			this.btnOk = new global::Gtk.Button ();
-			this.btnOk.WidthRequest = 48;
+			this.btnOk.WidthRequest = 52;
 			this.btnOk.CanFocus = true;
 			this.btnOk.Name = "btnOk";
 			this.btnOk.UseUnderline = true;
 			this.btnOk.Label = global::Mono.Unix.Catalog.GetString ("Apply");
 			this.panelBottom.Add (this.btnOk);
-			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.panelBottom [this.btnOk]));
-			w7.Position = 1;
-			w7.Expand = false;
-			w7.Fill = false;
+			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.panelBottom [this.btnOk]));
+			w9.Position = 1;
+			w9.Expand = false;
+			w9.Fill = false;
 			this.panelMain.Add (this.panelBottom);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.panelMain [this.panelBottom]));
-			w8.Position = 1;
-			w8.Expand = false;
-			w8.Fill = false;
+			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.panelMain [this.panelBottom]));
+			w10.Position = 1;
+			w10.Expand = false;
+			w10.Fill = false;
 			this.Add (this.panelMain);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

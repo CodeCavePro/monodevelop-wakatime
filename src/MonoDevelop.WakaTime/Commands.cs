@@ -1,5 +1,4 @@
 using MonoDevelop.Components.Commands;
-using Gtk;
 
 namespace MonoDevelop.WakaTime
 {
@@ -18,12 +17,10 @@ namespace MonoDevelop.WakaTime
     {
         protected override void Run ()
         {
-            Application.Init();
             using (var form = new SettingsWindow())
             {
                 form.Show();
             }
-            Application.Run();
         }
     }
 }

@@ -37,6 +37,8 @@
     <Compile Include="MonoDevelop.WakaTime\Commands.cs" />
     <Compile Include="MonoDevelop.WakaTime\SettingsWindow.cs" />
     <Compile Include="gtk-gui\MonoDevelop.WakaTime.SettingsWindow.cs" />
+    <Compile Include="MonoDevelop.WakaTime\WakaTimeConfigFile.cs" />
+    <Compile Include="MonoDevelop.WakaTime\MessageBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Manifest.addin.xml" />
@@ -87,5 +89,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Salaros.Config.Ini\Salaros.Config.Ini.csproj">
+      <Project>{B835EC8E-1BD4-4B41-A01B-E5C80B4F51C0}</Project>
+      <Name>Salaros.Config.Ini</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

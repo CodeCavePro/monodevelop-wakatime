@@ -6,30 +6,54 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral" />
     <widget-library name="../bin/Debug/MonoDevelop.WakaTime.dll" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MonoDevelop.WakaTime.SettingsWindow" design-size="389 131">
+  <widget class="Gtk.Window" id="MonoDevelop.WakaTime.SettingsWindow" design-size="371 135">
     <property name="MemberName" />
     <property name="Title" translatable="yes">WakaTime Settings</property>
-    <property name="TypeHint">Dialog</property>
     <property name="WindowPosition">CenterAlways</property>
-    <property name="Modal">True</property>
+    <property name="BorderWidth">1</property>
     <property name="DefaultWidth">400</property>
     <property name="DefaultHeight">60</property>
     <child>
       <widget class="Gtk.VBox" id="panelMain">
         <property name="MemberName" />
-        <property name="Spacing">6</property>
+        <property name="Spacing">5</property>
         <property name="BorderWidth">2</property>
         <child>
           <widget class="Gtk.Table" id="panelBody">
             <property name="MemberName" />
-            <property name="NRows">2</property>
+            <property name="NRows">3</property>
             <property name="NColumns">2</property>
             <property name="RowSpacing">6</property>
             <property name="ColumnSpacing">1</property>
             <child>
-              <widget class="Gtk.Label" id="labApiKey">
+              <widget class="Gtk.CheckButton" id="chkDebugMode">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Label" translatable="yes" />
+                <property name="DrawIndicator">True</property>
+                <property name="HasLabel">True</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="TopAttach">2</property>
+                <property name="BottomAttach">3</property>
+                <property name="LeftAttach">1</property>
+                <property name="RightAttach">2</property>
+                <property name="AutoSize">True</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">True</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="labAPIKey">
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">API key</property>
               </widget>
@@ -46,7 +70,7 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Label" id="labProxyAddress">
+              <widget class="Gtk.Label" id="labProxy">
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">Proxy</property>
               </widget>
@@ -65,7 +89,7 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Entry" id="txtApiKey">
+              <widget class="Gtk.Entry" id="txtAPIKey">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
@@ -85,7 +109,26 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Entry" id="txtProxyAddress">
+              <widget class="Gtk.Label" id="txtDebugMode">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Debug</property>
+              </widget>
+              <packing>
+                <property name="TopAttach">2</property>
+                <property name="BottomAttach">3</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtProxy">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
@@ -117,7 +160,7 @@
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <widget class="Gtk.Fixed" id="fixed2">
+              <widget class="Gtk.Fixed" id="panelFixed">
                 <property name="MemberName" />
                 <property name="HasWindow">False</property>
               </widget>
@@ -129,7 +172,7 @@
             <child>
               <widget class="Gtk.Button" id="btnOk">
                 <property name="MemberName" />
-                <property name="WidthRequest">48</property>
+                <property name="WidthRequest">52</property>
                 <property name="CanFocus">True</property>
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">Apply</property>
