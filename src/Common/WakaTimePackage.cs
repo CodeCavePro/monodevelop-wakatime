@@ -265,7 +265,10 @@ namespace MonoDevelop.WakaTime.Common
 
         private static void PromptApiKey()
         {
-            SettingsPopup();
+            using (var form = new ApiKeyWindow())
+            {
+                form.Show();
+            }
         }
 
         private static void SettingsPopup()

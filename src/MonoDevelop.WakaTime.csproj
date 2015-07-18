@@ -48,6 +48,8 @@
     <Compile Include="Common\Logger.cs" />
     <Compile Include="Common\Downloader.cs" />
     <Compile Include="Common\NativeMethods.cs" />
+    <Compile Include="MonoDevelop.WakaTime\ApiKeyWindow.cs" />
+    <Compile Include="gtk-gui\MonoDevelop.WakaTime.ApiKeyWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
