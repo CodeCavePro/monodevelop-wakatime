@@ -60,11 +60,13 @@ namespace MonoDevelop.WakaTime
         /// </summary>
         internal static void Read()
         {
-            _configData.Sections.Add(new SectionData("settings"));
+            if (!_configData.Sections.ContainsSection("settings"))
+                _configData.Sections.Add(new SectionData("settings"));
+            
             ApiKey = _configData["settings"]["api_key"] ?? string.Empty;
             Proxy = _configData["settings"]["proxy"] ?? string.Empty;
             var debugRaw = _configData["settings"]["debug"];
-            Debug = (debugRaw == null || debugRaw.Equals(true.ToString(CultureInfo.InvariantCulture)));
+            Debug = (debugRaw == null || debugRaw.Equals(true.ToString(CultureInfo.InvariantCulture).ToLowerInvariant()));
         }
 
         /// <summary>
@@ -72,10 +74,12 @@ namespace MonoDevelop.WakaTime
         /// </summary>
         internal static void Save()
         {
-            _configData.Sections.Add(new SectionData("settings"));
+            if (!_configData.Sections.ContainsSection("settings"))
+                _configData.Sections.Add(new SectionData("settings"));
+            
             _configData["settings"]["api_key"] = ApiKey.Trim();
             _configData["settings"]["proxy"] = Proxy.Trim();
-            _configData["settings"]["debug"] = Debug.ToString(CultureInfo.InvariantCulture);
+            _configData["settings"]["debug"] = Debug.ToString(CultureInfo.InvariantCulture).ToLowerInvariant();
             _configParser.WriteFile(_configFilepath, _configData, Encoding.UTF8);
         }
 
