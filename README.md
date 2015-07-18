@@ -22,3 +22,14 @@ Heads Up! WakaTime depends on [Python](http://www.python.org/getit/) being insta
 
 5. Visit https://wakatime.com to see your logged time.
 
+TODO
+----
+ * Create a shared library with common (for both Visual Studio and MonoDevelop/Xamarin Studio) C# code
+ * Fix API Key and Settings windows [#1 issue](https://github.com/salaros/monodevelop-wakatime/issues/1)
+ * Run some tests on Microsoft Windows + XamarinStudio
+ * Port [WakaTime Cli](https://github.com/wakatime/wakatime) to C# to avoid installing and running Python
+
+Credits
+-------
+
+Most of the code has been taken from [Visual Studio WakaTime](https://github.com/wakatime/visualstudio-wakatime) extension originally developed by WakaTime team
