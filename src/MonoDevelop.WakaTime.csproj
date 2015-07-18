@@ -39,6 +39,15 @@
     <Compile Include="gtk-gui\MonoDevelop.WakaTime.SettingsWindow.cs" />
     <Compile Include="MonoDevelop.WakaTime\WakaTimeConfigFile.cs" />
     <Compile Include="MonoDevelop.WakaTime\MessageBox.cs" />
+    <Compile Include="MonoDevelop.WakaTime\ZipFile.cs" />
+    <Compile Include="Common\WakaTimePackage.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\RunProcess.cs" />
+    <Compile Include="Common\PythonManager.cs" />
+    <Compile Include="Common\ProcessorArchitectureHelper.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\Downloader.cs" />
+    <Compile Include="Common\NativeMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Manifest.addin.xml" />
@@ -79,9 +88,20 @@
     </Reference>
     <Reference Include="MonoDevelop.Core, Version=2.6.0.0, Culture=neutral">
       <Package>monodevelop</Package>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral">
       <Package>monodevelop</Package>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49">
+      <Package>monodevelop</Package>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System" />
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -95,5 +115,8 @@
       <Project>{B835EC8E-1BD4-4B41-A01B-E5C80B4F51C0}</Project>
       <Name>Salaros.Config.Ini</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
   </ItemGroup>
 </Project>

@@ -12,4 +12,8 @@
 		<CommandItem id = "MonoDevelop.WakaTime.Commands.ShowSettingsWindow" insertbefore="OptionsSection" />
 	</Extension>
 
+	<Extension path = "/MonoDevelop/Ide/StartupHandlers">
+	  <Class class = "MonoDevelop.WakaTime.ShowSettingsOnStartUpHandler"/>
+	</Extension>
+
 </ExtensionModel>

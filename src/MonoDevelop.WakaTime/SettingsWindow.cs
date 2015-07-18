@@ -48,7 +48,7 @@ namespace MonoDevelop.WakaTime
             }
 
             this.Destroy();
-            Application.Quit();
+            // Application.Quit();
         }
 
         /// <summary>
