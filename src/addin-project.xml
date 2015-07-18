@@ -1,14 +1,14 @@
 ﻿<AddinProject appVersion="2.4">
 	<Project platforms="Mac Linux">
 		<AddinFile>bin/Debug/MonoDevelop.WakaTime.dll</AddinFile>
-		<AddinFile>bin/Debug/Salaros.Config.Ini.dll</AddinFile>
+		<AddinFile>bin/Debug/INIFileParser.dll</AddinFile>
 		<AddinFile>bin/Debug/ICSharpCode.SharpZipLib.dll.dll</AddinFile>
 		<BuildFile>MonoDevelop.WakaTime.sln</BuildFile>
 		<BuildConfiguration>Debug</BuildConfiguration>
 	</Project>
 	<Project platforms="Win32">
 		<AddinFile>bin/DebugWin32/MonoDevelop.WakaTime.dll</AddinFile>
-		<AddinFile>bin/DebugWin32/Salaros.Config.Ini.dll</AddinFile>
+		<AddinFile>bin/DebugWin32/INIFileParser.dll</AddinFile>
 		<AddinFile>bin/DebugWin32/ICSharpCode.SharpZipLib.dll.dll</AddinFile>
 		<BuildFile>MonoDevelop.WakaTime.sln</BuildFile>
 		<BuildConfiguration>DebugWin32</BuildConfiguration>

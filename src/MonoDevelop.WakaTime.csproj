@@ -105,18 +105,15 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="INIFileParser">
+      <HintPath>packages\ini-parser.2.2.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="__Manifest" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Salaros.Config.Ini\Salaros.Config.Ini.csproj">
-      <Project>{B835EC8E-1BD4-4B41-A01B-E5C80B4F51C0}</Project>
-      <Name>Salaros.Config.Ini</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />

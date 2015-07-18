@@ -1,13 +1,16 @@
 ﻿using System;
-using Salaros.Config.Ini;
 using System.IO;
+using IniParser;
+using IniParser.Model;
+using System.Globalization;
 
 namespace MonoDevelop.WakaTime
 {
     public static class WakaTimeConfigFile
     {
         private static readonly string _configFilepath;
-        private static readonly IniParser _configIni;
+        private static readonly FileIniDataParser _configParser;
+        private static readonly IniData _configData;
 
         #region Constructor
 
@@ -16,8 +19,9 @@ namespace MonoDevelop.WakaTime
         /// </summary>
         static WakaTimeConfigFile()
         {
+            _configParser = new FileIniDataParser();
             _configFilepath = GetConfigFilePath();
-            _configIni = new IniParser(_configFilepath);
+            _configData = _configParser.ReadFile(_configFilepath);
             Read();
         }
 
@@ -52,9 +56,9 @@ namespace MonoDevelop.WakaTime
         /// </summary>
         internal static void Read()
         {
-            ApiKey = _configIni.GetValue("settings", "api_key", string.Empty);
-            Proxy = _configIni.GetValue("settings", "proxy", string.Empty);
-            Debug = _configIni.GetValue("settings", "debug", false);
+            ApiKey = _configData["settings"]["api_key"];
+            Proxy = _configData["settings"]["proxy"];
+            Debug = _configData["settings"]["debug"].Equals(true.ToString(CultureInfo.InvariantCulture));
         }
 
         /// <summary>
@@ -62,10 +66,10 @@ namespace MonoDevelop.WakaTime
         /// </summary>
         internal static void Save()
         {
-            _configIni.SetValue("settings", "api_key", ApiKey.Trim());
-            _configIni.SetValue("settings", "proxy", Proxy.Trim());
-            _configIni.SetValue("settings", "debug", Debug);
-            _configIni.Write();
+            _configData["settings"]["api_key"] = ApiKey.Trim();
+            _configData["settings"]["proxy"] = Proxy.Trim();
+            _configData["settings"]["debug"] = Debug.ToString(CultureInfo.InvariantCulture);
+            _configParser.WriteFile(_configFilepath, _configData);
         }
 
         #endregion

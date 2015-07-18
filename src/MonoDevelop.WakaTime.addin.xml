@@ -2,7 +2,7 @@
 
 	<Runtime>
 		<Import assembly="MonoDevelop.WakaTime.dll"/>
-		<Import assembly="Salaros.Config.Ini.dll"/>
+		<Import assembly="INIFileParser.dll"/>
 		<Import assembly="ICSharpCode.SharpZipLib.dll"/>
 	</Runtime>
 
