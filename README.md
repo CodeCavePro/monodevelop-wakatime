@@ -22,6 +22,10 @@ Heads Up! WakaTime depends on [Python](http://www.python.org/getit/) being insta
 
 5. Visit https://wakatime.com to see your logged time.
 
+Build manually
+------------
+coming soon..
+
 TODO
 ----
  * Create a shared library with common (for both Visual Studio and MonoDevelop/Xamarin Studio) C# code
