@@ -3,7 +3,7 @@ using Mono.Addins;
 
 [assembly:Addin ("WakaTime", 
         Namespace = "MonoDevelop",
-        Version = "0.1.4",
+        Version = "0.1.6",
         Category = "IDE extensions")]
 
 [assembly: AddinName("WakaTime")]
@@ -11,5 +11,5 @@ using Mono.Addins;
 [assembly: AddinCategory("IDE extensions")]
 [assembly: AddinAuthor("Zhmayev Yaroslav (salaros)")]
 
-[assembly: AddinDependency("::MonoDevelop.Core", MonoDevelop.BuildInfo.Version)]
-[assembly: AddinDependency("::MonoDevelop.Ide", MonoDevelop.BuildInfo.Version)]
+[assembly: AddinDependency("Core", MonoDevelop.BuildInfo.Version)]
+[assembly: AddinDependency("Ide", MonoDevelop.BuildInfo.Version)]
