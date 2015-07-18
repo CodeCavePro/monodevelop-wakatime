@@ -1,0 +1,9 @@
+﻿<AddinProject appVersion="2.4">
+	<Project platforms="Mac Linux">
+		<AddinFile>bin/Debug/MonoDevelop.WakaTime.dll</AddinFile>
+		<AddinFile>bin/Debug/INIFileParser.dll</AddinFile>
+		<AddinFile>bin/Debug/ICSharpCode.SharpZipLib.dll.dll</AddinFile>
+		<BuildFile>src/MonoDevelop.WakaTime.sln</BuildFile>
+		<BuildConfiguration>Debug</BuildConfiguration>
+	</Project>
+</AddinProject>
