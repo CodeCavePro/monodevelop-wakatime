@@ -3,6 +3,8 @@ using System.IO;
 using IniParser;
 using IniParser.Model;
 using System.Globalization;
+using MonoDevelop.WakaTime.Common;
+using System.Text;
 
 namespace MonoDevelop.WakaTime
 {
@@ -21,7 +23,9 @@ namespace MonoDevelop.WakaTime
         {
             _configParser = new FileIniDataParser();
             _configFilepath = GetConfigFilePath();
-            _configData = _configParser.ReadFile(_configFilepath);
+            _configData = (File.Exists(_configFilepath))
+                ? _configParser.ReadFile(_configFilepath, Encoding.UTF8)
+                : new IniData();
             Read();
         }
 
@@ -56,9 +60,11 @@ namespace MonoDevelop.WakaTime
         /// </summary>
         internal static void Read()
         {
-            ApiKey = _configData["settings"]["api_key"];
-            Proxy = _configData["settings"]["proxy"];
-            Debug = _configData["settings"]["debug"].Equals(true.ToString(CultureInfo.InvariantCulture));
+            _configData.Sections.Add(new SectionData("settings"));
+            ApiKey = _configData["settings"]["api_key"] ?? string.Empty;
+            Proxy = _configData["settings"]["proxy"] ?? string.Empty;
+            var debugRaw = _configData["settings"]["debug"];
+            Debug = (debugRaw == null || debugRaw.Equals(true.ToString(CultureInfo.InvariantCulture)));
         }
 
         /// <summary>
@@ -66,10 +72,11 @@ namespace MonoDevelop.WakaTime
         /// </summary>
         internal static void Save()
         {
+            _configData.Sections.Add(new SectionData("settings"));
             _configData["settings"]["api_key"] = ApiKey.Trim();
             _configData["settings"]["proxy"] = Proxy.Trim();
             _configData["settings"]["debug"] = Debug.ToString(CultureInfo.InvariantCulture);
-            _configParser.WriteFile(_configFilepath, _configData);
+            _configParser.WriteFile(_configFilepath, _configData, Encoding.UTF8);
         }
 
         #endregion
