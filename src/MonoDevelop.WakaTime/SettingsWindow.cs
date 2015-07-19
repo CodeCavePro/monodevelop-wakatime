@@ -6,7 +6,7 @@ namespace MonoDevelop.WakaTime
     /// <summary>
     /// Settings window.
     /// </summary>
-    public sealed partial class SettingsWindow : Window
+    public partial class SettingsWindow : Window
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MonoDevelop.WakaTime.SettingsWindow"/> class.

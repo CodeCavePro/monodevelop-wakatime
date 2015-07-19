@@ -9,7 +9,7 @@
     <widget-library name="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral" />
     <widget-library name="../../bin/Debug/MonoDevelop.WakaTime.dll" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MonoDevelop.WakaTime.ApiKeyWindow" design-size="371 71">
+  <widget class="Gtk.Window" id="MonoDevelop.WakaTime.ApiKeyWindow" design-size="371 98">
     <property name="MemberName" />
     <property name="Title" translatable="yes">WakaTime Settings</property>
     <property name="WindowPosition">CenterAlways</property>
@@ -114,7 +114,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="MonoDevelop.WakaTime.SettingsWindow" design-size="371 135">
+  <widget class="Gtk.Window" id="MonoDevelop.WakaTime.SettingsWindow" design-size="371 127">
     <property name="MemberName" />
     <property name="Title" translatable="yes">WakaTime Settings</property>
     <property name="WindowPosition">CenterAlways</property>
