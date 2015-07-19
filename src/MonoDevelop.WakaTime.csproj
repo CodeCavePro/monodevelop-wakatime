@@ -37,7 +37,7 @@
     <Compile Include="Properties\AddinInfo.cs" />
     <Compile Include="MonoDevelop.WakaTime\Commands.cs" />
     <Compile Include="MonoDevelop.WakaTime\SettingsWindow.cs" />
-    <Compile Include="MonoDevelop.WakaTime\WakaTimeConfigFile.cs" />
+    <Compile Include="Common\WakaTimeConfigFile.cs" />
     <Compile Include="MonoDevelop.WakaTime\MessageBox.cs" />
     <Compile Include="MonoDevelop.WakaTime\ZipFile.cs" />
     <Compile Include="Common\WakaTimePackage.cs" />
@@ -86,19 +86,15 @@
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
-    <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='Debug'">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="MonoDevelop.Ide" Condition="'$(Configuration)'=='Debug'">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="MonoDevelop.Ide" Condition="'$(Configuration)'=='Debug'" />
     <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>C:\Program Files %28x86%29\Xamarin Studio\bin\MonoDevelop.Core.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MonoDevelop.Ide" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>C:\Program Files %28x86%29\Xamarin Studio\bin\MonoDevelop.Ide.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll</HintPath>
