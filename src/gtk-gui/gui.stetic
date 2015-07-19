@@ -6,8 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral" />
-    <widget-library name="../../bin/Debug/MonoDevelop.WakaTime.dll" internal="true" />
+    <widget-library name="../../bin/DebugWin32/MonoDevelop.WakaTime.dll" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MonoDevelop.WakaTime.ApiKeyWindow" design-size="371 98">
     <property name="MemberName" />
