@@ -1,10 +1,10 @@
 
 using Mono.Addins;
 
-[assembly:Addin ("WakaTime", 
-        Namespace = "MonoDevelop",
-        Version = "0.4",
-        Category = "IDE extensions")]
+[assembly:Addin("WakaTime", 
+    Namespace = "MonoDevelop",
+    Version = "0.5",
+    Category = "IDE extensions")]
 
 [assembly: AddinName("WakaTime")]
 [assembly: AddinDescription("WakaTime is a productivity & time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch.")]
