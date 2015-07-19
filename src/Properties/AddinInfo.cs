@@ -3,7 +3,7 @@ using Mono.Addins;
 
 [assembly:Addin("WakaTime", 
     Namespace = "MonoDevelop",
-    Version = "0.5",
+    Version = "0.6",
     Category = "IDE extensions")]
 
 [assembly: AddinName("WakaTime")]
