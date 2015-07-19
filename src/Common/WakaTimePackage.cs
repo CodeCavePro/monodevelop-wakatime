@@ -12,11 +12,12 @@ using System.Linq;
 
 namespace MonoDevelop.WakaTime.Common
 {
-    public class WakaTimePackage 
+    public class WakaTimePackage
     {
         #region Fields
+
         private static string _version = string.Empty;
-        private static string _editorVersion = string.Empty;     
+        private static string _editorVersion = string.Empty;
 
         private static string _lastFile;
         private static string _solutionName = string.Empty;
@@ -26,7 +27,7 @@ namespace MonoDevelop.WakaTime.Common
 
         #endregion
 
-        #region Startup/Cleanup         
+        #region Startup/Cleanup
 
         internal void Initialize()
         {
@@ -50,7 +51,10 @@ namespace MonoDevelop.WakaTime.Common
                     {
                         Directory.Delete(ConfigDir + "wakatime-master", true);
                     }
-                    catch { /* ignored */ }
+                    catch
+                    {
+                        /* ignored */
+                    }
 
                     Downloader.DownloadCli(WakaTimeConstants.CliUrl, ConfigDir);
                 }
@@ -78,13 +82,19 @@ namespace MonoDevelop.WakaTime.Common
                 Logger.Instance.Error(ex.Message);
             }
         }
+
         #endregion
 
         #region Event Handlers
+
         private void DocEventsOnDocumentOpened(object sender, DocumentEventArgs args)
         {
             try
             {
+                var solution = GetSolution();
+                if (solution == null)
+                    return;
+
                 HandleActivity(args.Document.FileName, false);
             }
             catch (Exception ex)
@@ -97,6 +107,10 @@ namespace MonoDevelop.WakaTime.Common
         {
             try
             {
+                var solution = GetSolution();
+                if (solution == null)
+                    return;
+
                 var document = IdeApp.Workbench.ActiveDocument;
                 if (document != null)
                     HandleActivity(document.FileName, false);
@@ -111,6 +125,10 @@ namespace MonoDevelop.WakaTime.Common
         {
             try
             {
+                var solution = GetSolution();
+                if (solution == null)
+                    return;
+
                 var document = IdeApp.Workbench.ActiveDocument;
                 if (document != null)
                     HandleActivity(document.FileName, false);
@@ -125,12 +143,12 @@ namespace MonoDevelop.WakaTime.Common
         {
             try
             {
-                var solution = IdeApp.ProjectOperations.CurrentSelectedSolution;
-                if(solution == null)
+                var solution = GetSolution();
+                if (solution == null)
                     return;
 
                 var fileEvent = args.LastOrDefault();
-                if(fileEvent == null)
+                if (fileEvent == null)
                     return;
                 
                 HandleActivity(fileEvent.FileName, true);
@@ -145,6 +163,9 @@ namespace MonoDevelop.WakaTime.Common
         {
             try
             {
+                if (args.Solution == null)
+                    return;
+
                 _solutionName = args.Solution.Name;
             }
             catch (Exception ex)
@@ -152,16 +173,18 @@ namespace MonoDevelop.WakaTime.Common
                 Logger.Instance.Error("SolutionEventsOnOpened : " + ex.Message);
             }
         }
+
         #endregion
 
         #region Methods
 
         private void HandleActivity(string currentFile, bool isWrite)
         {
-            if (currentFile == null) return;
+            if (currentFile == null)
+                return;
 
             var thread = new Thread(
-                delegate()
+                             delegate()
                 {
                     lock (ThreadLock)
                     {
@@ -194,15 +217,15 @@ namespace MonoDevelop.WakaTime.Common
         public static void SendHeartbeat(string fileName, bool isWrite)
         {
             var arguments = new List<string>
-                {
-                    GetCli(),
-                    "--key",
-                    WakaTimeConfigFile.ApiKey,
-                    "--file",
-                    fileName,
-                    "--plugin",
-                    WakaTimeConstants.EditorName + "/" + _editorVersion + " " + WakaTimeConstants.PluginName + "/" + _version
-                };
+            {
+                GetCli(),
+                "--key",
+                WakaTimeConfigFile.ApiKey,
+                "--file",
+                fileName,
+                "--plugin",
+                WakaTimeConstants.EditorName + "/" + _editorVersion + " " + WakaTimeConstants.PluginName + "/" + _version
+            };
 
             if (isWrite)
                 arguments.Add("--write");
@@ -284,6 +307,14 @@ namespace MonoDevelop.WakaTime.Common
             if (!string.IsNullOrEmpty(_solutionName))
                 return Path.GetFileNameWithoutExtension(_solutionName);
 
+            var solution = GetSolution();
+            return (solution != null) 
+                ? (_solutionName = solution.Name)
+                : IdeApp.Workbench.ActiveDocument.Name;
+        }
+
+        private static Solution GetSolution()
+        {
             var solution = IdeApp.ProjectOperations.CurrentSelectedSolution;
             if (solution == null && IdeApp.ProjectOperations.CurrentSelectedWorkspaceItem != null)
             {
@@ -291,10 +322,9 @@ namespace MonoDevelop.WakaTime.Common
                 solution = solutions.FirstOrDefault(); // TODO might throw exceptions
             }
 
-            return (solution != null) 
-                ? (_solutionName = solution.Name)
-                : IdeApp.Workbench.ActiveDocument.Name;
+            return solution;
         }
+
         #endregion
 
         static class CoreAssembly
