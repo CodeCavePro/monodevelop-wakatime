@@ -51,3 +51,4 @@ Credits
 -------
 
 Most of the code has been taken from [Visual Studio WakaTime](https://github.com/wakatime/visualstudio-wakatime) extension originally developed by WakaTime team
+Hovewer it was made cross-platform and soon will be heavily refactored, including the complete porting of [WakaTime Cli](https://github.com/wakatime/wakatime) from Python to C#
