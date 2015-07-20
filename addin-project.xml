@@ -1,15 +1,12 @@
-<AddinProject appVersion="2.4">
+<?xml version="1.0" encoding="utf-8" ?>
+<AddinProject appVersion="5.0">
 	<Project platforms="Mac Linux">
 		<AddinFile>bin/Debug/MonoDevelop.WakaTime.dll</AddinFile>
-		<AddinFile>bin/Debug/INIFileParser.dll</AddinFile>
-		<AddinFile>bin/Debug/ICSharpCode.SharpZipLib.dll</AddinFile>
 		<BuildFile>src/MonoDevelop.WakaTime.sln</BuildFile>
 		<BuildConfiguration>Debug</BuildConfiguration>
 	</Project>
 	<Project platforms="Win32">
 		<AddinFile>bin/DebugWin32/MonoDevelop.WakaTime.dll</AddinFile>
-		<AddinFile>bin/DebugWin32/INIFileParser.dll</AddinFile>
-		<AddinFile>bin/DebugWin32/ICSharpCode.SharpZipLib.dll</AddinFile>
 		<BuildFile>src/MonoDevelop.WakaTime.sln</BuildFile>
 		<BuildConfiguration>DebugWin32</BuildConfiguration>
 	</Project>
