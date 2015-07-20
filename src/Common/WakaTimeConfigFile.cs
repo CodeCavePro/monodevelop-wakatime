@@ -24,7 +24,7 @@ namespace MonoDevelop.WakaTime
             _configParser = new FileIniDataParser();
             _configFilepath = GetConfigFilePath();
             _configData = (File.Exists(_configFilepath))
-                ? _configParser.ReadFile(_configFilepath, Encoding.UTF8)
+                ? _configParser.ReadFile(_configFilepath, new UTF8Encoding(false))
                 : new IniData();
             Read();
         }
@@ -80,7 +80,7 @@ namespace MonoDevelop.WakaTime
             _configData["settings"]["api_key"] = ApiKey.Trim();
             _configData["settings"]["proxy"] = Proxy.Trim();
             _configData["settings"]["debug"] = Debug.ToString(CultureInfo.InvariantCulture).ToLowerInvariant();
-            _configParser.WriteFile(_configFilepath, _configData, Encoding.UTF8);
+            _configParser.WriteFile(_configFilepath, _configData, new UTF8Encoding(false));
         }
 
         #endregion
