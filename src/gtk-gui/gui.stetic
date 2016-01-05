@@ -8,7 +8,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../../bin/DebugWin32/MonoDevelop.WakaTime.dll" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="SettingsForm" design-size="505 140">
+  <widget class="Gtk.Window" id="SettingsForm" design-size="505 149">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Settings</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -27,7 +27,7 @@
             <child>
               <widget class="Gtk.Label" id="labApi">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">API key</property>
+                <property name="LabelProp" translatable="yes">API key :</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -42,6 +42,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
               </widget>
               <packing>
                 <property name="Position">1</property>
@@ -63,14 +64,14 @@
             <child>
               <widget class="Gtk.Label" id="labProxy">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">Proxy</property>
+                <property name="LabelProp" translatable="yes">Proxy :</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
-                <property name="Padding">12</property>
+                <property name="Padding">11</property>
               </packing>
             </child>
             <child>
@@ -78,6 +79,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
               </widget>
               <packing>
                 <property name="Position">1</property>
@@ -96,7 +98,7 @@
           <widget class="Gtk.CheckButton" id="chkDebugMode">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Label" translatable="yes">Debug WakaTime</property>
+            <property name="Label" translatable="yes">Debugging WakaTime?</property>
             <property name="DrawIndicator">True</property>
             <property name="HasLabel">True</property>
             <property name="UseUnderline">True</property>
@@ -119,7 +121,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">OK</property>
+                <property name="Label" translatable="yes">Save</property>
                 <property name="UseUnderline">True</property>
                 <signal name="Clicked" handler="btnOK_Clicked" />
               </widget>
@@ -135,6 +137,7 @@
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">Cancel</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnCancel_Clicked" />
               </widget>
               <packing>
                 <property name="Position">1</property>
@@ -155,7 +158,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ApiKeyForm" design-size="505 113">
+  <widget class="Gtk.Window" id="ApiKeyForm" design-size="505 146">
     <property name="MemberName" />
     <property name="Title" translatable="yes">API key</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -174,7 +177,7 @@
             <child>
               <widget class="Gtk.Label" id="labWakaTime">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">Need a WakaTime account:</property>
+                <property name="LabelProp" translatable="yes">Need an account? Visit </property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -214,7 +217,7 @@
             <child>
               <widget class="Gtk.Label" id="labApi">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">API key</property>
+                <property name="LabelProp" translatable="yes">WakaTime API Key :</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -229,6 +232,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
               </widget>
               <packing>
                 <property name="Position">1</property>
