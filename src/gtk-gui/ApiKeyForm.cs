@@ -42,7 +42,7 @@ public partial class ApiKeyForm
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.labWakaTime = new global::Gtk.Label ();
 		this.labWakaTime.Name = "labWakaTime";
-		this.labWakaTime.LabelProp = global::Mono.Unix.Catalog.GetString ("Need a WakaTime account:");
+		this.labWakaTime.LabelProp = global::Mono.Unix.Catalog.GetString ("Need an account? Visit ");
 		this.hbox2.Add (this.labWakaTime);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.labWakaTime]));
 		w1.Position = 0;
@@ -71,7 +71,7 @@ public partial class ApiKeyForm
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.labApi = new global::Gtk.Label ();
 		this.labApi.Name = "labApi";
-		this.labApi.LabelProp = global::Mono.Unix.Catalog.GetString ("API key");
+		this.labApi.LabelProp = global::Mono.Unix.Catalog.GetString ("WakaTime API Key :");
 		this.hbox1.Add (this.labApi);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.labApi]));
 		w4.Position = 0;
@@ -83,6 +83,7 @@ public partial class ApiKeyForm
 		this.txtAPIKey.CanFocus = true;
 		this.txtAPIKey.Name = "txtAPIKey";
 		this.txtAPIKey.IsEditable = true;
+		this.txtAPIKey.InvisibleChar = '●';
 		this.hbox1.Add (this.txtAPIKey);
 		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.txtAPIKey]));
 		w5.Position = 1;
@@ -117,7 +118,7 @@ public partial class ApiKeyForm
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultHeight = 113;
+		this.DefaultHeight = 146;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.btnWamaTime.Clicked += new global::System.EventHandler (this.btnWamaTime_Clicked);

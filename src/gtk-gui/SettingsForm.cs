@@ -46,7 +46,7 @@ public partial class SettingsForm
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.labApi = new global::Gtk.Label ();
 		this.labApi.Name = "labApi";
-		this.labApi.LabelProp = global::Mono.Unix.Catalog.GetString ("API key");
+		this.labApi.LabelProp = global::Mono.Unix.Catalog.GetString ("API key :");
 		this.hbox2.Add (this.labApi);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.labApi]));
 		w1.Position = 0;
@@ -58,6 +58,7 @@ public partial class SettingsForm
 		this.txtAPIKey.CanFocus = true;
 		this.txtAPIKey.Name = "txtAPIKey";
 		this.txtAPIKey.IsEditable = true;
+		this.txtAPIKey.InvisibleChar = '●';
 		this.hbox2.Add (this.txtAPIKey);
 		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.txtAPIKey]));
 		w2.Position = 1;
@@ -73,18 +74,19 @@ public partial class SettingsForm
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.labProxy = new global::Gtk.Label ();
 		this.labProxy.Name = "labProxy";
-		this.labProxy.LabelProp = global::Mono.Unix.Catalog.GetString ("Proxy");
+		this.labProxy.LabelProp = global::Mono.Unix.Catalog.GetString ("Proxy :");
 		this.hbox1.Add (this.labProxy);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.labProxy]));
 		w4.Position = 0;
 		w4.Expand = false;
 		w4.Fill = false;
-		w4.Padding = ((uint)(12));
+		w4.Padding = ((uint)(11));
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.txtProxy = new global::Gtk.Entry ();
 		this.txtProxy.CanFocus = true;
 		this.txtProxy.Name = "txtProxy";
 		this.txtProxy.IsEditable = true;
+		this.txtProxy.InvisibleChar = '●';
 		this.hbox1.Add (this.txtProxy);
 		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.txtProxy]));
 		w5.Position = 1;
@@ -97,7 +99,7 @@ public partial class SettingsForm
 		this.chkDebugMode = new global::Gtk.CheckButton ();
 		this.chkDebugMode.CanFocus = true;
 		this.chkDebugMode.Name = "chkDebugMode";
-		this.chkDebugMode.Label = global::Mono.Unix.Catalog.GetString ("Debug WakaTime");
+		this.chkDebugMode.Label = global::Mono.Unix.Catalog.GetString ("Debugging WakaTime?");
 		this.chkDebugMode.DrawIndicator = true;
 		this.chkDebugMode.UseUnderline = true;
 		this.vbox1.Add (this.chkDebugMode);
@@ -115,7 +117,7 @@ public partial class SettingsForm
 		this.btnOK.CanFocus = true;
 		this.btnOK.Name = "btnOK";
 		this.btnOK.UseUnderline = true;
-		this.btnOK.Label = global::Mono.Unix.Catalog.GetString ("OK");
+		this.btnOK.Label = global::Mono.Unix.Catalog.GetString ("Save");
 		this.hbuttonbox2.Add (this.btnOK);
 		global::Gtk.ButtonBox.ButtonBoxChild w8 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.btnOK]));
 		w8.Expand = false;
@@ -142,9 +144,10 @@ public partial class SettingsForm
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultHeight = 140;
+		this.DefaultHeight = 149;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.btnOK.Clicked += new global::System.EventHandler (this.btnOK_Clicked);
+		this.btnCancel.Clicked += new global::System.EventHandler (this.btnCancel_Clicked);
 	}
 }
