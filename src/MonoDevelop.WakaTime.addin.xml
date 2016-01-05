@@ -22,7 +22,7 @@
 		<Import assembly="ICSharpCode.SharpZipLib.dll" />
 		<Import assembly="WakaTime.dll" />
 	</Runtime>
-
+	
 	<!-- Extensions -->
 	
 	<Extension path = "/MonoDevelop/Ide/Commands">
