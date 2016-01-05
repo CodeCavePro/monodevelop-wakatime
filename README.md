@@ -41,10 +41,8 @@ You can build and install this addin manually. On Linux you can skip the first s
 5. Click the `Install` button and follow the installation manual above starting from step 4.
 
 TODO
-----
- * Create a shared library with common (for both Visual Studio and MonoDevelop/Xamarin Studio) C# code
- * Fix API Key and Settings windows [#1 issue](https://github.com/salaros/monodevelop-wakatime/issues/1)
- * Run some tests on Microsoft Windows + XamarinStudio
+-------
+
  * Port [WakaTime Cli](https://github.com/wakatime/wakatime) to C# to avoid installing and running Python
 
 Credits
