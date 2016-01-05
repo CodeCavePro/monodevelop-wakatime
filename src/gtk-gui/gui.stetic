@@ -260,6 +260,7 @@
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">OK</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnOk_Click" />
               </widget>
               <packing>
                 <property name="Expand">False</property>
