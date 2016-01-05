@@ -62,7 +62,7 @@
       <Private>True</Private>
       <HintPath>packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" Condition="'$(Configuration)'=='DebugWin32'">
+    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='DebugWin32'">
       <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Addins">
