@@ -16,14 +16,6 @@ namespace MonoDevelop.WakaTime
 
         public void Initialize()
         {
-            Task.Run(() =>
-                {
-                    InitializeAsync();
-                });
-        }
-
-        static void InitializeAsync()
-        {
             _idePlugin = new WakaTimeMonoDevelopPlugin(null);
         }
 

@@ -143,9 +143,9 @@ namespace MonoDevelop.WakaTime
                 apiKeyForm = new ApiKeyForm();
                 apiKeyForm.Show();
             }
-            finally
+            catch (Exception ex)
             {
-                apiKeyForm = null;
+                Logger.Error("Failed to prompt for API", ex);
             }
         }
 
@@ -157,9 +157,9 @@ namespace MonoDevelop.WakaTime
                 settingForm = new SettingsForm();
                 settingForm.Show();
             }
-            finally
+            catch (Exception ex)
             {
-                settingForm = null;
+                Logger.Error("Failed to prompt for API", ex);
             }
         }
 
