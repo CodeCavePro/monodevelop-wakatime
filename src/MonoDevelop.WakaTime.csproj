@@ -46,11 +46,11 @@
     <Compile Include="Forms\MessageBox.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MonoDevelop.WakaTime.addin.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.WakaTime.addin.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -75,16 +75,6 @@
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
-    <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="MonoDevelop.Ide" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='DebugWin32'">
-      <HintPath>C:\Program Files %28x86%29\Xamarin Studio\bin\MonoDevelop.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoDevelop.Ide" Condition="'$(Configuration)'=='DebugWin32'">
-      <HintPath>C:\Program Files %28x86%29\Xamarin Studio\bin\MonoDevelop.Ide.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Mono.Cecil" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll</HintPath>
     </Reference>
@@ -103,13 +93,26 @@
     <Reference Include="WakaTime">
       <HintPath>packages\WakaTime.8.0.1\lib\net45\WakaTime.dll</HintPath>
     </Reference>
-    <Reference Include="atk-sharp" />
-    <Reference Include="gtk-sharp" />
-    <Reference Include="gdk-sharp" />
-    <Reference Include="gtk-dotnet" />
-    <Reference Include="glib-sharp" />
-    <Reference Include="glade-sharp" />
-    <Reference Include="pango-sharp" />
+    <Reference Include="MonoDevelop.Core">
+      <HintPath>..\lib\MonoDevelop.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoDevelop.Ide">
+      <HintPath>..\lib\MonoDevelop.Ide.dll</HintPath>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
+    <Reference Include="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
+    <Reference Include="atk-sharp" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="gtk-sharp" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="gdk-sharp" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="gtk-dotnet" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="glib-sharp" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="glade-sharp" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="pango-sharp" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="__Manifest" />
