@@ -7,35 +7,27 @@
 	copyright=""
 	description="WakaTime is a productivity and time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch."
 	category="IDE extensions"
-	version="0.8">
+	version="0.8.1">
 
 	<!-- Resources -->
-
 	<Dependencies>
-		<Addin id="Ide" version = "5.0" />
-		<Addin id="Core" version = "5.0" />
+		<Addin id="Ide" version="5.0" />
+		<Addin id="Core" version="5.0" />
 	</Dependencies>
-
 	<Runtime>
 		<Import assembly="MonoDevelop.WakaTime.dll" />
 		<Import assembly="INIFileParser.dll" />
 		<Import assembly="ICSharpCode.SharpZipLib.dll" />
 		<Import assembly="WakaTime.dll" />
 	</Runtime>
-	
 	<!-- Extensions -->
-	
-	<Extension path = "/MonoDevelop/Ide/Commands">
-		<Command id = "MonoDevelop.WakaTime.Commands.ShowSettingsWindow"
-		         defaultHandler = "MonoDevelop.WakaTime.ShowSettingsWindowHandler"
-		         _label = "WakaTime Settings" />
+	<Extension path="/MonoDevelop/Ide/Commands">
+		<Command id="MonoDevelop.WakaTime.Commands.ShowSettingsWindow" defaultHandler="MonoDevelop.WakaTime.ShowSettingsWindowHandler" _label="WakaTime Settings" />
 	</Extension>
-
-	<Extension path = "/MonoDevelop/Ide/MainMenu/Tools">
-		<CommandItem id = "MonoDevelop.WakaTime.Commands.ShowSettingsWindow" insertbefore="OptionsSection" />
+	<Extension path="/MonoDevelop/Ide/MainMenu/Tools">
+		<CommandItem id="MonoDevelop.WakaTime.Commands.ShowSettingsWindow" insertbefore="OptionsSection" />
 	</Extension>
-
-	<Extension path = "/MonoDevelop/Ide/StartupHandlers">
-		<Class class = "MonoDevelop.WakaTime.ShowSettingsOnStartUpHandler"/>
+	<Extension path="/MonoDevelop/Ide/StartupHandlers">
+		<Class class="MonoDevelop.WakaTime.ShowSettingsOnStartUpHandler" />
 	</Extension>
 </Addin>
