@@ -7,12 +7,15 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		DebugWin32|Any CPU = DebugWin32|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FB6FAD55-0236-49E8-84D4-083142A16546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB6FAD55-0236-49E8-84D4-083142A16546}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB6FAD55-0236-49E8-84D4-083142A16546}.DebugWin32|Any CPU.ActiveCfg = DebugWin32|Any CPU
 		{FB6FAD55-0236-49E8-84D4-083142A16546}.DebugWin32|Any CPU.Build.0 = DebugWin32|Any CPU
+		{FB6FAD55-0236-49E8-84D4-083142A16546}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6FAD55-0236-49E8-84D4-083142A16546}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

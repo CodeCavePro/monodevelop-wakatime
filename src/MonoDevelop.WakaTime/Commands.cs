@@ -1,5 +1,5 @@
 using MonoDevelop.Components.Commands;
-using MonoDevelop.WakaTime.Common;
+using WakaTime;
 
 namespace MonoDevelop.WakaTime
 {
@@ -16,9 +16,9 @@ namespace MonoDevelop.WakaTime
     /// </summary>
     class ShowSettingsWindowHandler : CommandHandler
     {
-        protected override void Run ()
+        protected override void Run()
         {
-            WakaTimePackage.MenuItemCallback();
+            WakaTimePackage.SettingsPopup();
         }
     }
 

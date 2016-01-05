@@ -17,9 +17,10 @@
 	</Dependencies>
 
 	<Runtime>
-		<Import assembly="MonoDevelop.WakaTime.dll"/>
-		<Import assembly="INIFileParser.dll"/>
-		<Import assembly="ICSharpCode.SharpZipLib.dll"/>
+		<Import assembly="MonoDevelop.WakaTime.dll" />
+		<Import assembly="INIFileParser.dll" />
+		<Import assembly="ICSharpCode.SharpZipLib.dll" />
+		<Import assembly="WakaTime.dll" />
 	</Runtime>
 
 	<!-- Extensions -->
@@ -35,6 +36,6 @@
 	</Extension>
 
 	<Extension path = "/MonoDevelop/Ide/StartupHandlers">
-	  <Class class = "MonoDevelop.WakaTime.ShowSettingsOnStartUpHandler"/>
+		<Class class = "MonoDevelop.WakaTime.ShowSettingsOnStartUpHandler"/>
 	</Extension>
 </Addin>
