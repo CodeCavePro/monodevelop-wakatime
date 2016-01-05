@@ -58,7 +58,10 @@
   <ItemGroup>
     <Reference Include="System.Net" />
     <Reference Include="System" />
-    <Reference Include="Mono.Posix" />
+    <Reference Include="Mono.Posix">
+      <HintPath>packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Mono.Addins">
       <HintPath>packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
       <Private>False</Private>
@@ -99,20 +102,13 @@
     <Reference Include="MonoDevelop.Ide">
       <HintPath>..\lib\MonoDevelop.Ide.dll</HintPath>
     </Reference>
-    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
-    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
-    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
-    <Reference Include="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
-    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
-    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
-    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" Condition="'$(Configuration)'=='DebugWin32'" />
-    <Reference Include="atk-sharp" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="gtk-sharp" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="gdk-sharp" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="gtk-dotnet" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="glib-sharp" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="glade-sharp" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="pango-sharp" Condition="'$(Configuration)'=='Debug'" />
+    <Reference Include="atk-sharp" />
+    <Reference Include="gtk-sharp" />
+    <Reference Include="gdk-sharp" />
+    <Reference Include="gtk-dotnet" />
+    <Reference Include="glib-sharp" />
+    <Reference Include="pango-sharp" />
+    <Reference Include="glade-sharp" />
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="__Manifest" />

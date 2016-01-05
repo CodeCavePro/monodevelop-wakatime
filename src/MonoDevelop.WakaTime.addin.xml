@@ -19,6 +19,7 @@
 		<Import assembly="INIFileParser.dll" />
 		<Import assembly="ICSharpCode.SharpZipLib.dll" />
 		<Import assembly="WakaTime.dll" />
+		<Import assembly="Mono.Posix.dll" />
 	</Runtime>
 	<!-- Extensions -->
 	<Extension path="/MonoDevelop/Ide/Commands">
