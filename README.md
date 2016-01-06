@@ -16,7 +16,7 @@ Heads Up! WakaTime depends on [Python](http://www.python.org/getit/) being insta
 
 4. On MonoDevelop/Xamarin Studio versions prior to 5.10 you might get an error message, just ignore it, it's a Mono.Addin bug, it has been already solved in latest releases.
 
-5. Enter your [api key](https://wakatime.com/settings#apikey) from [https://wakatime.com/settings#apikey](https://wakatime.com/settings#apikey), then click `Apply` button. If you don't get any error message click close the dialog ([#1 issue](https://github.com/salaros/monodevelop-wakatime/issues/1) I'm still trying to figure out how to close modal GTK# windows).
+5. Enter your [api key](https://wakatime.com/settings#apikey) from [https://wakatime.com/settings#apikey](https://wakatime.com/settings#apikey), then click `Apply` button.
 
 6. You might have to restart your MonoDevelop/Xamarin Studio
 
