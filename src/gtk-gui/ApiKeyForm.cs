@@ -122,5 +122,6 @@ public partial class ApiKeyForm
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.btnWamaTime.Clicked += new global::System.EventHandler (this.btnWamaTime_Clicked);
+		this.btnOK.Clicked += new global::System.EventHandler (this.btnOk_Click);
 	}
 }
