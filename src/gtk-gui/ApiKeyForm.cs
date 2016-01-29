@@ -26,7 +26,7 @@ public partial class ApiKeyForm
 		global::Stetic.Gui.Initialize (this);
 		// Widget ApiKeyForm
 		this.Name = "ApiKeyForm";
-		this.Title = global::Mono.Unix.Catalog.GetString ("API key");
+		this.Title = "API key";
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		this.Modal = true;
 		this.BorderWidth = ((uint)(10));
@@ -42,7 +42,7 @@ public partial class ApiKeyForm
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.labWakaTime = new global::Gtk.Label ();
 		this.labWakaTime.Name = "labWakaTime";
-		this.labWakaTime.LabelProp = global::Mono.Unix.Catalog.GetString ("Need an account? Visit ");
+		this.labWakaTime.LabelProp = "Need an account? Visit ";
 		this.hbox2.Add (this.labWakaTime);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.labWakaTime]));
 		w1.Position = 0;
@@ -54,7 +54,7 @@ public partial class ApiKeyForm
 		this.btnWamaTime.CanFocus = true;
 		this.btnWamaTime.Name = "btnWamaTime";
 		this.btnWamaTime.UseUnderline = true;
-		this.btnWamaTime.Label = global::Mono.Unix.Catalog.GetString ("visit http://wakatime.com");
+		this.btnWamaTime.Label = "visit http://wakatime.com";
 		this.hbox2.Add (this.btnWamaTime);
 		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.btnWamaTime]));
 		w2.Position = 1;
@@ -71,7 +71,7 @@ public partial class ApiKeyForm
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.labApi = new global::Gtk.Label ();
 		this.labApi.Name = "labApi";
-		this.labApi.LabelProp = global::Mono.Unix.Catalog.GetString ("WakaTime API Key :");
+		this.labApi.LabelProp = "WakaTime API Key :";
 		this.hbox1.Add (this.labApi);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.labApi]));
 		w4.Position = 0;
@@ -102,7 +102,7 @@ public partial class ApiKeyForm
 		this.btnOK.CanFocus = true;
 		this.btnOK.Name = "btnOK";
 		this.btnOK.UseUnderline = true;
-		this.btnOK.Label = global::Mono.Unix.Catalog.GetString ("OK");
+		this.btnOK.Label = "OK";
 		this.hbuttonbox2.Add (this.btnOK);
 		global::Gtk.ButtonBox.ButtonBoxChild w7 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.btnOK]));
 		w7.Expand = false;

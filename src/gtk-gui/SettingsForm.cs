@@ -30,7 +30,7 @@ public partial class SettingsForm
 		global::Stetic.Gui.Initialize (this);
 		// Widget SettingsForm
 		this.Name = "SettingsForm";
-		this.Title = global::Mono.Unix.Catalog.GetString ("Settings");
+		this.Title = "Settings";
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		this.Modal = true;
 		this.BorderWidth = ((uint)(10));
@@ -46,7 +46,7 @@ public partial class SettingsForm
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.labApi = new global::Gtk.Label ();
 		this.labApi.Name = "labApi";
-		this.labApi.LabelProp = global::Mono.Unix.Catalog.GetString ("API key :");
+		this.labApi.LabelProp = "API key :";
 		this.hbox2.Add (this.labApi);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.labApi]));
 		w1.Position = 0;
@@ -74,7 +74,7 @@ public partial class SettingsForm
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.labProxy = new global::Gtk.Label ();
 		this.labProxy.Name = "labProxy";
-		this.labProxy.LabelProp = global::Mono.Unix.Catalog.GetString ("Proxy :");
+		this.labProxy.LabelProp = "Proxy :";
 		this.hbox1.Add (this.labProxy);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.labProxy]));
 		w4.Position = 0;
@@ -99,7 +99,7 @@ public partial class SettingsForm
 		this.chkDebugMode = new global::Gtk.CheckButton ();
 		this.chkDebugMode.CanFocus = true;
 		this.chkDebugMode.Name = "chkDebugMode";
-		this.chkDebugMode.Label = global::Mono.Unix.Catalog.GetString ("Debugging WakaTime?");
+		this.chkDebugMode.Label = "Debugging WakaTime?";
 		this.chkDebugMode.DrawIndicator = true;
 		this.chkDebugMode.UseUnderline = true;
 		this.vbox1.Add (this.chkDebugMode);
@@ -117,7 +117,7 @@ public partial class SettingsForm
 		this.btnOK.CanFocus = true;
 		this.btnOK.Name = "btnOK";
 		this.btnOK.UseUnderline = true;
-		this.btnOK.Label = global::Mono.Unix.Catalog.GetString ("Save");
+		this.btnOK.Label = "Save";
 		this.hbuttonbox2.Add (this.btnOK);
 		global::Gtk.ButtonBox.ButtonBoxChild w8 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.btnOK]));
 		w8.Expand = false;
@@ -127,7 +127,7 @@ public partial class SettingsForm
 		this.btnCancel.CanFocus = true;
 		this.btnCancel.Name = "btnCancel";
 		this.btnCancel.UseUnderline = true;
-		this.btnCancel.Label = global::Mono.Unix.Catalog.GetString ("Cancel");
+		this.btnCancel.Label = "Cancel";
 		this.hbuttonbox2.Add (this.btnCancel);
 		global::Gtk.ButtonBox.ButtonBoxChild w9 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.btnCancel]));
 		w9.Position = 1;
