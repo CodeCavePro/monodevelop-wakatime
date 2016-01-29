@@ -1,4 +1,5 @@
 using System;
+using Mono.TextEditor;
 using MonoDevelop.Ide;
 using MonoDevelop.Core;
 using MonoDevelop.Ide.Gui;
@@ -15,6 +16,7 @@ namespace MonoDevelop.WakaTime
         ILogService _logService;
         EditorInfo _editorInfo;
         bool _disposed;
+        Document _document;
 
         #endregion
 
@@ -53,7 +55,19 @@ namespace MonoDevelop.WakaTime
         {
             var document = IdeApp.Workbench.ActiveDocument;
             if (document != null)
+            {
+                if (_document != null && _document.Editor != null && _document.Editor.Caret != null)
+                    _document.Editor.Caret.PositionChanged -= OnCaretPositionChanged;
                 OnDocumentOpened(document.FileName.FullPath);
+                if (document.Editor != null && document.Editor.Caret != null)
+                    document.Editor.Caret.PositionChanged += OnCaretPositionChanged;
+                _document = document;
+            }
+        }
+
+        void OnCaretPositionChanged(object sender, DocumentLocationEventArgs e)
+        {
+            OnDocumentChanged(_document.FileName.FullPath);
         }
 
         void SolutionFileChanged(object sender, FileEventArgs args)
