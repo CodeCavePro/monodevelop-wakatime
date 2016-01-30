@@ -41,8 +41,10 @@
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="gtk-gui\ApiKeyForm.cs" />
     <Compile Include="gtk-gui\SettingsForm.cs" />
+    <Compile Include="gtk-gui\DownloadProgressForm.cs" />
     <Compile Include="Forms\ApiKeyForm.cs" />
     <Compile Include="Forms\SettingsForm.cs" />
+    <Compile Include="Forms\DownloadProgressForm.cs" />
     <Compile Include="Forms\MessageBox.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +97,6 @@
     <Reference Include="INIFileParser">
       <HintPath>packages\ini-parser.2.2.4\lib\net20\INIFileParser.dll</HintPath>
     </Reference>
-    <Reference Include="WakaTime">
-      <HintPath>packages\WakaTime.8.0.4\lib\net45\WakaTime.dll</HintPath>
-    </Reference>
     <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='Debug'" />
     <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>..\lib\MonoDevelop.Core.dll</HintPath>
@@ -120,6 +119,9 @@
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="WakaTime">
+      <HintPath>packages\WakaTime.8.0.5\lib\net45\WakaTime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="__Manifest" />

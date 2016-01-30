@@ -116,6 +116,11 @@ namespace MonoDevelop.WakaTime
             return _editorInfo;
         }
 
+        public override IDownloadProgressReporter GetReporter()
+        {
+            return new DownloadProgressForm(IdeApp.Workbench.RootWindow);
+        }
+
         public override string GetActiveSolutionPath()
         {
             var solution = GetSolution();
