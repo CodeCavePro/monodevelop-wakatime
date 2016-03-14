@@ -67,7 +67,7 @@ namespace MonoDevelop.WakaTime
 
         void OnCaretPositionChanged(object sender, DocumentLocationEventArgs e)
         {
-            OnDocumentChanged(_document.FileName.FullPath);
+            OnDocumentOpened(_document.FileName.FullPath);
         }
 
         void SolutionFileChanged(object sender, FileEventArgs args)
