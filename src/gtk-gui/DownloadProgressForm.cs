@@ -25,7 +25,7 @@ public partial class DownloadProgressForm
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.progressbar1 = new global::Gtk.ProgressBar ();
 		this.progressbar1.Name = "progressbar1";
-		this.progressbar1.PulseStep = 1D;
+		this.progressbar1.PulseStep = 1;
 		this.vbox1.Add (this.progressbar1);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.progressbar1]));
 		w1.PackType = ((global::Gtk.PackType)(1));
@@ -34,7 +34,7 @@ public partial class DownloadProgressForm
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultHeight = 98;
+		this.DefaultHeight = 75;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 	}

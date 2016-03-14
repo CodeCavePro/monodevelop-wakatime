@@ -5,6 +5,8 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
+    <widget-library name="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral" />
+    <widget-library name="Mono.TextEditor, Version=1.0.0.0, Culture=neutral" />
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../../bin/DebugWin32/MonoDevelop.WakaTime.dll" internal="true" />
   </import>
@@ -158,7 +160,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="DownloadProgressForm" design-size="597 98">
+  <widget class="Gtk.Window" id="DownloadProgressForm" design-size="597 75">
     <property name="MemberName" />
     <property name="Title" translatable="yes">WakaTime | Downloading..</property>
     <property name="TypeHint">Splashscreen</property>
