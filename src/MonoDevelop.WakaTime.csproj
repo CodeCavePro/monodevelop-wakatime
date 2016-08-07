@@ -60,13 +60,6 @@
   <ItemGroup>
     <Reference Include="System.Net" />
     <Reference Include="System" />
-    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='Debug'">
-      <HintPath>packages\Mono.Posix-4.5.4.5.0\lib\net45\Mono.Posix.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='DebugWin32'">
-      <Private>True</Private>
-      <HintPath>..\lib\6.x\Mono.Posix.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Addins">
       <HintPath>packages\Mono.Addins.1.3\lib\net40\Mono.Addins.dll</HintPath>
       <Private>False</Private>
@@ -83,8 +76,13 @@
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='DebugWin32'">
+      <HintPath>packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Mono.Cecil" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Cecil.Mdb" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
@@ -145,7 +143,7 @@
       <Properties>
         <Policies>
           <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
-          <CSharpFormattingPolicy IndentSwitchBody="True" IndentBlocksInsideExpressions="True" AnonymousMethodBraceStyle="NextLine" PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ElseNewLinePlacement="NewLine" CatchNewLinePlacement="NewLine" FinallyNewLinePlacement="NewLine" WhileNewLinePlacement="DoNotCare" ArrayInitializerWrapping="DoNotChange" ArrayInitializerBraceStyle="NextLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" NewLineBeforeConstructorInitializerColon="NewLine" NewLineAfterConstructorInitializerColon="SameLine" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" SpacesBeforeBrackets="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+          <CSharpFormattingPolicy inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
         </Policies>
         <GtkDesignInfo generateGettext="False" />
       </Properties>
