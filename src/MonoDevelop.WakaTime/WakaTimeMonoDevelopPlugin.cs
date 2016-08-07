@@ -56,16 +56,16 @@ namespace MonoDevelop.WakaTime
             var document = IdeApp.Workbench.ActiveDocument;
             if (document != null)
             {
-                if (_document != null && _document.Editor != null && _document.Editor.Caret != null)
-                    _document.Editor.Caret.PositionChanged -= OnCaretPositionChanged;
+                if (_document != null && _document.Editor != null)
+                    _document.Editor.CaretPositionChanged -= OnCaretPositionChanged;
                 OnDocumentOpened(document.FileName.FullPath);
-                if (document.Editor != null && document.Editor.Caret != null)
-                    document.Editor.Caret.PositionChanged += OnCaretPositionChanged;
+                if (document != null && document.Editor != null)
+                    document.Editor.CaretPositionChanged += OnCaretPositionChanged;
                 _document = document;
             }
         }
 
-        void OnCaretPositionChanged(object sender, DocumentLocationEventArgs e)
+        void OnCaretPositionChanged(object sender, EventArgs e)
         {
             OnDocumentOpened(_document.FileName.FullPath);
         }
@@ -191,7 +191,7 @@ namespace MonoDevelop.WakaTime
             var solution = IdeApp.ProjectOperations.CurrentSelectedSolution;
             if (solution == null && IdeApp.ProjectOperations.CurrentSelectedWorkspaceItem != null)
             {
-                var solutions = IdeApp.ProjectOperations.CurrentSelectedWorkspaceItem.GetAllSolutions();
+                var solutions = IdeApp.ProjectOperations.CurrentSelectedWorkspaceItem.GetAllItems<Solution>();
                 solution = solutions.FirstOrDefault(); // TODO might throw exceptions
             }
 
