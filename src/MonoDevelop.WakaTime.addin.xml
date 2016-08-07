@@ -19,7 +19,6 @@
 		<Import assembly="INIFileParser.dll" />
 		<Import assembly="ICSharpCode.SharpZipLib.dll" />
 		<Import assembly="WakaTime.dll" />
-		<Import assembly="Mono.Posix.dll" />
 		<ScanExclude path="Mono.Posix.dll" />
 	</Runtime>
 	<!-- Extensions -->

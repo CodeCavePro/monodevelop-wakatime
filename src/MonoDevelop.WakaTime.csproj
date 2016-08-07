@@ -117,11 +117,6 @@
     <Reference Include="WakaTime">
       <HintPath>packages\WakaTime.8.0.5\lib\net45\WakaTime.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='DebugWin32'">
-      <HintPath>packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="__Manifest" />
