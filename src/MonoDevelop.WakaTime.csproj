@@ -76,6 +76,7 @@
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='Debug'" />
     <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
       <Private>True</Private>
