@@ -108,7 +108,8 @@ namespace MonoDevelop.WakaTime
                 {
                     Name = typeof(IdeApp).Namespace.ToLowerInvariant(),
                     Version = IdeApp.Version,
-                    PluginName = "monodevelop-wakatime",
+                    PluginKey = "monodevelop-wakatime",
+                    PluginName = "WakaTime",
                     PluginVersion = typeof(WakaTimeMonoDevelopPlugin).Assembly.GetName().Version
                 };
             }
