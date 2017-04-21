@@ -1,13 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<AddinProject appVersion="6.0">
-	<Project platforms="Mac Linux">
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddinProject appVersion="7.0">
+	<Project platforms="Mac">
 		<AddinFile>bin/Debug/MonoDevelop.WakaTime.dll</AddinFile>
 		<BuildFile>src/MonoDevelop.WakaTime.sln</BuildFile>
 		<BuildConfiguration>Debug</BuildConfiguration>
-	</Project>
-	<Project platforms="Win32">
-		<AddinFile>bin/DebugWin32/MonoDevelop.WakaTime.dll</AddinFile>
-		<BuildFile>src/MonoDevelop.WakaTime.sln</BuildFile>
-		<BuildConfiguration>DebugWin32</BuildConfiguration>
 	</Project>
 </AddinProject>
