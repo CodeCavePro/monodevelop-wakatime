@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Addin id="WakaTime" namespace="MonoDevelop" name="WakaTime" author="Zhmayev Yaroslav (salaros)" url="https://github.com/salaros/monodevelop-wakatime" copyright="" description="WakaTime is a productivity and time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch." category="IDE extensions" version="1.0.6">
+<Addin id="WakaTime" namespace="MonoDevelop" name="WakaTime" author="Zhmayev Yaroslav (salaros)" url="https://github.com/salaros/monodevelop-wakatime" copyright="" description="WakaTime is a productivity and time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch." category="IDE extensions" version="1.0.7">
 	<!-- Resources -->
 	<Dependencies>
 		<Addin id="Ide" version="5.0" />
