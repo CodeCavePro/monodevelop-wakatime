@@ -30,6 +30,7 @@ cache:
 
 # Run scripts below before 
 before_build:
+  - where msbuild
   - nuget restore src
 
 # To run your custom scripts instead of automatic MSBuild
