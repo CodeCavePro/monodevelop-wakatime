@@ -134,7 +134,7 @@
     <Folder Include="Forms\" />
   </ItemGroup>
   <Target Name="AfterBuild">
-    <Exec Command="mdtool setup pack $(SolutionDir)\$(OutDir)\MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(SolutionDir)\$(OutDir)" />
+    <Exec Command="mdtool setup pack MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(OutputPath)" />
   </Target>
   <ProjectExtensions>
     <MonoDevelop>
