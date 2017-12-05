@@ -31,7 +31,7 @@ before_build:
 # To run your custom scripts instead of automatic MSBuild
 build_script:
   - cmd: cd src
-  - cmd: msbuild MonoDevelop.WakaTime.sln
+  - cmd: msbuild /p:Configuration=DebugWin32 MonoDevelop.WakaTime.sln
 
 # Addin files qualified as artifacts
 artifacts:
