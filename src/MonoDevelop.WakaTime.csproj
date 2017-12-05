@@ -137,7 +137,7 @@
     <PropertyGroup>
       <OutputAbsolutePath>$([System.IO.Path]::GetFullPath($(OutputPath)))</OutputAbsolutePath>
     </PropertyGroup>
-    <Exec Command="mdtool setup pack $(OutputAbsolutePath)MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(OutputAbsolutePath)" />
+    <Exec Command="mdtool setup pack $(OutputAbsolutePath)MonoDevelop.WakaTime.dll" ContinueOnError="true" WorkingDirectory="$(OutputAbsolutePath)" />
   </Target>
   <ProjectExtensions>
     <MonoDevelop>
