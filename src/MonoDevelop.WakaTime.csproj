@@ -128,7 +128,6 @@
     <None Include="..\addin-project.xml">
       <Link>addin-project.xml</Link>
     </None>
-    <None Include="nuget.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
