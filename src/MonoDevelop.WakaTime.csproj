@@ -89,18 +89,15 @@
     <Reference Include="Mono.Cecil.Rocks" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="MonoDevelop.Core" Condition="'$(Configuration)'=='DebugWin32'">
+    <Reference Include="MonoDevelop.Core">
       <HintPath>..\lib\6.x\MonoDevelop.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="MonoDevelop.Ide" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="MonoDevelop.Ide" Condition="'$(Configuration)'=='DebugWin32'">
+    <Reference Include="MonoDevelop.Ide">
       <HintPath>..\lib\6.x\MonoDevelop.Ide.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Mono.TextEditor" Condition="'$(Configuration)'=='Debug'" />
-    <Reference Include="Mono.TextEditor" Condition="'$(Configuration)'=='DebugWin32'">
+    <Reference Include="Mono.TextEditor">
       <HintPath>..\lib\6.x\Mono.TextEditor.dll</HintPath>
       <Private>False</Private>
     </Reference>
