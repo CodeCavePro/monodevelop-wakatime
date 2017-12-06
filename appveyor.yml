@@ -46,7 +46,8 @@ artifacts:
 # Deploy to GitHub releases
 deploy:
   provider: GitHub
-  release: "WakaTime Addin v$(appveyor_build_version) for v5.x"
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  release: "WakaTime Addin v$(APPVEYOR_REPO_TAG_NAME) for v5.x"
   description: "Supports\n* MonoDevelop for &#128039; Linux / ❖ Windows (*Unity3D editor*)\n* XamarinStudio for ⌘ Mac / ❖ Windows\n\nFor Windows use **_Windows.mpack** files"
   force_update: true
   auth_token:
