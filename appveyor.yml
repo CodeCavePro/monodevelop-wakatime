@@ -40,7 +40,7 @@ build_script:
 
 # Addin files qualified as artifacts
 artifacts:
-  - path: ./bin/DebugWin32/*.mpack
+  - path: bin\DebugWin32\**\*.mpack
     name: MonoDevelop.WakaTime
 
 # Turn off tests
