@@ -1,0 +1,19 @@
+# use the new container-based Travis infrastructure
+os: linux
+dist: trusty
+sudo: false  
+
+language: csharp
+solution: MonoDevelop.WakaTime.sln
+mono:
+  - latest
+
+before_install:
+  - cd src
+
+install:
+  - sudo apt-get install -yq monodevelop # Install MonoDevelop for mdtool utility
+  - nuget restore MonoDevelop.WakaTime.sln
+
+script:
+  - xbuild MonoDevelop.WakaTime.sln
