@@ -1,0 +1,27 @@
+# use the new container-based Travis infrastructure
+os: linux
+dist: trusty
+sudo: false  
+
+language: csharp
+solution: MonoDevelop.WakaTime.sln
+mono:
+  - 3.12.0
+
+install:
+  - sudo apt-get install -yq monodevelop # Install MonoDevelop for mdtool utility
+  - nuget restore ./src/MonoDevelop.WakaTime.sln
+
+script:
+  - mdtool --help # must be run at least once before doing `mdtool setup ...` (seemingly an mdtool bug)
+  - xbuild /p:Configuration=Debug ./src/MonoDevelop.WakaTime.sln
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "lWPB6Nq2U0EIEpCGXk/62FKaE0yxZ58ZekewwaGEW0WmGOHFhMBUHk9l0gEea7RscZ4lis5gZe/7FJJ9FXNKPwWsbeXkLnvWba75qt+ydFsCSZR21FrmDaIEFHGXXDKOrWUjQ1AXjyek9yB/j7TALqDv5JXkN7azXHAa8zMEFI9HqrC6TiclJOCiaZFwOjNVnFmYZ52QfDx4TKRpVRPgUQ5YlLInhFaeN5vL9WC6oRohltR4CPfNWwJFyjNtkA1ACNqNr20w3Nq4lyxnW23D/n/uAm/rlhCM6Uxpp+9lccTFKGZgfv8yApTQhO+ZeNIsxGSP9LdryKuhur1JK6eyPPMiA6yneNFZltkIJnk63VuswWxhl4Os1VeCfDj0FIzK8JpToHbZX9TE3dIEfQyDc/9hcQDREkBtAjyX4F2kO2FrBpoD6KIl96OL481KDDRLx0omKRPB/1to9U946sU4WxWlRwpzovIMDQ6LltjxaBmRbjNiHRwvzmTdVA/XaYfd1ll/9SzxW7ugjPUVROOQ7k4N1yMF0Yi21mKD+Y0QUPVhDEZiV0c8xRdq1PM4RpOHB4HTTTlQ4OvQ+YW/sIfy6+F+UAQL1q6fM1OQVKSaUkm5iE3Z0gdRwlHSG0zmnWwb4s/v8ym9UO+wKhrgqg6fn6DezpXbEGiP5YPVN8gDiFA="
+  file_glob: true
+  file: "./bin/Debug/MonoDevelop.WakaTime_*.mpack" # find the addin
+  skip_cleanup: true
+  on:
+    tags: true
