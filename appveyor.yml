@@ -40,7 +40,7 @@ build_script:
 
 # Addin files qualified as artifacts
 artifacts:
-  - path: '**\*.mpack' # find the addin
+  - path: '**\*_Windows.mpack' # find the addin
     name: MonoDevelop_WakaTime
 
 # Deploy to GitHub releases
