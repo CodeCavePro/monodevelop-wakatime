@@ -52,7 +52,7 @@
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.WakaTime.addin.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -134,7 +134,10 @@
     <Folder Include="Forms\" />
   </ItemGroup>
   <Target Name="AfterBuild">
-    <Exec Command="mdtool setup pack $(SolutionDir)\$(OutDir)\MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(SolutionDir)\$(OutDir)" />
+    <PropertyGroup>
+      <OutputAbsolutePath>$([System.IO.Path]::GetFullPath($(OutputPath)))</OutputAbsolutePath>
+    </PropertyGroup>
+    <Exec Command="mdtool setup pack $(OutputAbsolutePath)MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" />
   </Target>
   <ProjectExtensions>
     <MonoDevelop>

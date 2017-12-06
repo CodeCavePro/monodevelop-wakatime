@@ -2,7 +2,11 @@
 version: "{build}"
 
 # Operating system (build VM template)
-os: Windows Server 2012 R2
+os: Windows Server 2016
+
+# If the build configuration does not specify build worker image
+# then Visual Studio 2015 image is used.
+image: Visual Studio 2017
 
 # Restrict to Git branches below
 branches:
@@ -26,20 +30,29 @@ cache:
 
 # Run scripts below before 
 before_build:
+  - where msbuild
   - nuget restore src
 
 # To run your custom scripts instead of automatic MSBuild
 build_script:
-  - cmd: cd src
-  - cmd: msbuild /p:Configuration=DebugWin32 MonoDevelop.WakaTime.sln
+  - cmd: mdtool --help # must be run at least once before doing `mdtool setup ...` (seemingly an mdtool bug)
+  - cmd: msbuild /p:Configuration=DebugWin32 /t:Build src/MonoDevelop.WakaTime.sln
 
 # Addin files qualified as artifacts
 artifacts:
-  - path: ./bin/DebugWin32/*.mpack
-    name: MonoDevelop.WakaTime
+  - path: '**\*.mpack' # find the addin
+    name: MonoDevelop_WakaTime
+
+# Deploy to GitHub releases
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: 2+d0KgCbWQpUR8TZfzvUEzbi4NQP6F/Tt0PUwLn6jXZCyO8FnrFVFJPsFa0QBQFl
+  artifact: MonoDevelop_WakaTime
+  draft: false
+  prerelease: false
+  on:
+    appveyor_repo_tag: true
 
 # Turn off tests
 test: off
-
-# Disable deployment for now
-deploy: off
