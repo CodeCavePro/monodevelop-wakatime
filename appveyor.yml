@@ -52,6 +52,7 @@ deploy:
   draft: false
   prerelease: false
   on:
+    branch: 6.x
     appveyor_repo_tag: true
 
 # Turn off tests
