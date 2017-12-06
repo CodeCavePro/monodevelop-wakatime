@@ -18,4 +18,5 @@ install:
   - nuget restore MonoDevelop.WakaTime.sln
 
 script:
+  - mdtool --help # must be run at least once before doing `mdtool setup ...` (seemingly an mdtool bug)
   - xbuild /p:Configuration=Debug MonoDevelop.WakaTime.sln
