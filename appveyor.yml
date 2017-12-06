@@ -35,6 +35,7 @@ before_build:
 
 # To run your custom scripts instead of automatic MSBuild
 build_script:
+  - cmd: mdtool --help # must be run at least once before doing `mdtool setup ...` (seemingly an mdtool bug)
   - cmd: msbuild /p:Configuration=DebugWin32 /t:Build src/MonoDevelop.WakaTime.sln
 
 # Addin files qualified as artifacts
