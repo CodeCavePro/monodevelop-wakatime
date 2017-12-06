@@ -18,4 +18,4 @@ install:
   - nuget restore MonoDevelop.WakaTime.sln
 
 script:
-  - xbuild MonoDevelop.WakaTime.sln
+  - xbuild /p:Configuration=Debug MonoDevelop.WakaTime.sln
