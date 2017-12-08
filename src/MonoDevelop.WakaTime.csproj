@@ -124,7 +124,18 @@
     <Folder Include="Forms\" />
   </ItemGroup>
   <Target Name="AfterBuild">
-    <Exec Command="mdtool setup pack $(SolutionDir)\$(OutDir)\MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(SolutionDir)\$(OutDir)" />
+    <ItemGroup>
+      <AddinFilesWin32 Include="$(OutputPath)\**\*_Windows.mpack" />
+    </ItemGroup>
+    <Delete Files="@(AddinFilesWin32)" ContinueOnError="true" Condition="'$(Configuration)'=='DebugWin32'" />
+    <PropertyGroup>
+      <OutputAbsolutePath>$([System.IO.Path]::GetFullPath($(OutputPath)))</OutputAbsolutePath>
+    </PropertyGroup>
+    <Exec Command="mdtool setup pack $(OutputAbsolutePath)MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(OutputAbsolutePath)" />
+    <ItemGroup>
+      <AddinFiles Include="$(OutputPath)\**\*.mpack" />
+    </ItemGroup>
+    <Move SourceFiles="@(AddinFiles)" ContinueOnError="true" Condition="'$(Configuration)'=='DebugWin32'" DestinationFiles="@(AddinFiles-&gt;'$(OutputAbsolutePath)\%(Filename)_Windows%(Extension)')" />
   </Target>
   <ProjectExtensions>
     <MonoDevelop>
