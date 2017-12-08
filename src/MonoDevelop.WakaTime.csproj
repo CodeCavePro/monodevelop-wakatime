@@ -100,7 +100,7 @@
       <HintPath>packages\ini-parser.2.2.4\lib\net20\INIFileParser.dll</HintPath>
     </Reference>
     <Reference Include="WakaTime">
-      <HintPath>packages\WakaTime.8.0.7\lib\net45\WakaTime.dll</HintPath>
+      <HintPath>packages\WakaTime.8.1.1\lib\net45\WakaTime.dll</HintPath>
     </Reference>
     <Reference Include="MonoDevelop.Core">
       <HintPath>..\lib\7.x\MonoDevelop.Core.dll</HintPath>
