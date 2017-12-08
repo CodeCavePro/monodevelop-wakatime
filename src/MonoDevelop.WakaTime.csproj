@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>MonoDevelop.WakaTime</RootNamespace>
     <AssemblyName>MonoDevelop.WakaTime</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,7 +100,7 @@
       <HintPath>packages\ini-parser.2.2.4\lib\net20\INIFileParser.dll</HintPath>
     </Reference>
     <Reference Include="WakaTime">
-      <HintPath>packages\WakaTime.8.0.7\lib\net45\WakaTime.dll</HintPath>
+      <HintPath>packages\WakaTime.8.1.1\lib\net45\WakaTime.dll</HintPath>
     </Reference>
     <Reference Include="MonoDevelop.Core">
       <HintPath>..\lib\7.x\MonoDevelop.Core.dll</HintPath>
@@ -124,7 +124,18 @@
     <Folder Include="Forms\" />
   </ItemGroup>
   <Target Name="AfterBuild">
-    <Exec Command="mdtool setup pack $(SolutionDir)\$(OutDir)\MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(SolutionDir)\$(OutDir)" />
+    <ItemGroup>
+      <AddinFilesWin32 Include="$(OutputPath)\**\*_Windows.mpack" />
+    </ItemGroup>
+    <Delete Files="@(AddinFilesWin32)" ContinueOnError="true" Condition="'$(Configuration)'=='DebugWin32'" />
+    <PropertyGroup>
+      <OutputAbsolutePath>$([System.IO.Path]::GetFullPath($(OutputPath)))</OutputAbsolutePath>
+    </PropertyGroup>
+    <Exec Command="mdtool setup pack $(OutputAbsolutePath)MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(OutputAbsolutePath)" />
+    <ItemGroup>
+      <AddinFiles Include="$(OutputPath)\**\*.mpack" />
+    </ItemGroup>
+    <Move SourceFiles="@(AddinFiles)" ContinueOnError="true" Condition="'$(Configuration)'=='DebugWin32'" DestinationFiles="@(AddinFiles-&gt;'$(OutputAbsolutePath)\%(Filename)_Windows%(Extension)')" />
   </Target>
   <ProjectExtensions>
     <MonoDevelop>
