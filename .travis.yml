@@ -7,9 +7,6 @@ language: csharp
 solution: MonoDevelop.WakaTime.sln
 mono:
   - 4.8.0
-  - 4.6.0
-  - 4.4.0
-  - 4.2.0
 
 install:
   - sudo apt-get install -yq monodevelop # Install MonoDevelop for mdtool utility
