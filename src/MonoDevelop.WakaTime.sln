@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDevelop.WakaTime", "MonoDevelop.WakaTime.csproj", "{FB6FAD55-0236-49E8-84D4-083142A16546}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D33E7E3C-F88A-4738-9D2E-114686B94AC4}"
+	ProjectSection(SolutionItems) = preProject
+		..\addin-project.xml = ..\addin-project.xml
+		..\appveyor.yml = ..\appveyor.yml
+		..\LICENSE.md = ..\LICENSE.md
+		..\README.md = ..\README.md
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
