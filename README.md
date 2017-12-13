@@ -10,52 +10,70 @@ WakaTime add-in for MonoDevelop / Xamarin Studio / Visual Studio for Mac
 [![Linux/macOS Builds via Travis CI](https://travis-ci.org/CodeCavePro/monodevelop-wakatime.svg?branch=7.x)](https://travis-ci.org/CodeCavePro/monodevelop-wakatime/branches)
 [![Linux/macOS Builds via AppVeyor](https://ci.appveyor.com/api/projects/status/etc2j9e3ptg2vr1i/branch/7.x?svg=true)](https://ci.appveyor.com/project/salaros/monodevelop-wakatime/branch/7.x)
 
-WakaTime is a productivity & time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch.
+[WakaTime](https://wakatime.com/features) is a productivity & time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch.
 
-Installation
-------------
+# Installation
 
-Heads Up! WakaTime depends on [Python](http://www.python.org/getit/) being installed to work correctly.
+The latests stable versions of WakaTime addin are **[available via GitHub Releases](https://github.com/CodeCavePro/monodevelop-wakatime/releases)**
 
-1. Inside MonoDevelop/Xamarin Studio, navigate to `Tools` -> `Add-in Manager`
+Heads Up! WakaTime depends on [Python](http://www.python.org/getit/) being installed to work correctly. On macOS and Linux Python is usually pre-installed, while on Windows WakaTime tries to install automatically a portable version of Python.
 
-2. Click the `Gallery` tab, then search for `wakatime`.
+1. Inside MonoDevelop/Xamarin Studio/Visual Studio for Mac, navigate to `Tools` -> `Add-in Manager`
+
+2. Click the `Install from file...` button and browse to `/path/to/monodevelop-wakatime/bin/Debug` or `DebugWin32` folder, depending on your OS and install MonoDevelop.WakaTime_x.x.mpack
 
 3. Click the `Install` button and then when add-in installation dialog popups click `Install`.
 
-4. On MonoDevelop/Xamarin Studio versions prior to 5.10 you might get an error message, just ignore it, it's a Mono.Addin bug, it has been already solved in latest releases.
+4. On MonoDevelop/Xamarin Studio/Visual Studio for Mac versions prior to 5.10 you might get an error message, just ignore it, it's a Mono.Addin bug, it has been already solved in latest releases.
 
 5. Enter your [api key](https://wakatime.com/settings#apikey) from [https://wakatime.com/settings#apikey](https://wakatime.com/settings#apikey), then click `Apply` button.
 
-6. You might have to restart your MonoDevelop/Xamarin Studio
+6. You might have to restart your MonoDevelop/Xamarin Studio/Visual Studio for Mac
 
-7. Use MonoDevelop/Xamarin Studio like you normally do and your time will be tracked for you automatically.
+7. Use MonoDevelop/Xamarin Studio/Visual Studio for Mac like you normally do and your time will be tracked for you automatically.
 
-8. Visit https://wakatime.com to see your logged time.
+8. Visit [Wakatime Dashboard](http://wakatime.com/dashboard) to see your logged time.
 
-Installing manually
-------------
+# Installing via Addin Gallery
+
+## !!! Unfortunately MonoDevelop / Xamarin Studio / Visual Studio for Mac adding gallery is currently broken at the moment (it's not building/publishing fresh copies of addins automatically) !!!
+
+1. Inside MonoDevelop/Xamarin Studio/Visual Studio for Mac, navigate to `Tools` -> `Add-in Manager`
+
+2. Click the `Gallery` tab, then search for `wakatime`.
+
+3. Click the `Install` button and follow the [installation guide above](#installation) starting from step #4.
+
+## Build & Install Manually
+
 You can build and install this addin manually. On Linux you can skip the first step.
 
-1. On Mac OS X and Windows you might have to make `mdtool` globally accessible by..
-    * On Mac OS X: `ln -sv /usr/bin/mdtool /Applications/Xamarin Studio.app/Contents/MacOS/mdtool`
-    * On Windows: add `%ProgramFiles%"\Xamarin Studio\bin` or `%ProgramFiles(x86)%"\Xamarin Studio\bin` append to PATH environment variable
+1. Make make `mdtool` globally accessible.
 
-2. Just open the solution in MonoDevelop/Xamarin Studio and build it using the appropriate configuration (`Debug` for Linux and Mac and `DebugWin32` for Windows).
- 
-3. Inside MonoDevelop/Xamarin Studio, navigate to `Tools` -> `Add-in Manager`
+    * On macOS open the Terminal and run the following command:
+    ```bash
+    sudo ln -sv /Applications/Xamarin Studio.app/Contents/MacOS/mdtool /usr/bin/
+    ```
+    * On Windows just add `%ProgramFiles%"\Xamarin Studio\bin` or `%ProgramFiles(x86)%"\Xamarin Studio\bin` append to PATH environment variable
+    * On Linux `mdtool` is usually globally accessible, otherwise locate it and symlink it to `/usr/local/bin/` or similar
+
+2. Just open the solution in MonoDevelop/Xamarin Studio/Visual Studio for Mac and build it using the appropriate configuration (`Debug` for Linux and macOS and `DebugWin32` for Windows).
+Or use [NuGet](https://www.nuget.org/downloads) + [XBuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/) / [MSBuild](https://en.wikipedia.org/wiki/MSBuild) in order to build it from the command-line:
+```bash
+nuget restore ./src
+msbuild /p:Configuration=<Debug or DebugWin32 here> /t:Build ./src
+```
+
+3. Inside MonoDevelop/Xamarin Studio/Visual Studio for Mac, navigate to `Tools` -> `Add-in Manager`
 
 4. Click the `Install from file...` button and browse to `/path/to/monodevelop-wakatime/bin/Debug` or `DebugWin32` folder, depending on your OS and install MonoDevelop.WakaTime_x.x.mpack
 
-5. Click the `Install` button and follow the installation manual above starting from step 4.
+5. Click the `Install` button and follow the [installation guide above](#installation) starting from step #4.
 
-TODO
--------
+## Credits
 
- * Port [WakaTime Cli](https://github.com/wakatime/wakatime) to C# to avoid installing and running Python
+Some code has been taken from [Visual Studio WakaTime](https://github.com/wakatime/visualstudio-wakatime) extension originally developed by WakaTime team. Hovewer that code has been heavily refactored, made cross-platform etc.
 
-Credits
--------
+## TODO
 
-Most of the code has been taken from [Visual Studio WakaTime](https://github.com/wakatime/visualstudio-wakatime) extension originally developed by WakaTime team
-Hovewer it was made cross-platform and soon will be heavily refactored, including the complete porting of [WakaTime Cli](https://github.com/wakatime/wakatime) from Python to C#
+Try to port WakaTime to C# to avoid relying on Python
