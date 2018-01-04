@@ -12,6 +12,12 @@ MonoDevelop/Xamarin Studio add-in for WakaTime v5.x
 
 [WakaTime](https://wakatime.com/features) is a productivity & time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch.
 
+Downloads from the gallery:
+
+[![Linux](https://img.shields.io/badge/dynamic/json.svg?label=Linux&colorB=CC5566&prefix=&suffix=&query=$.totals[0][1]&uri=http%3A%2F%2Faddins.monodevelop.com%2FProject%2FGetStatsAsync%3Fpid%3D183%26relid%3D3707%26period%3Dperiod%26arg%3D2016-04-16.2018-01-03)](http://addins.monodevelop.com/Project/Index/183)
+[![macOS](https://img.shields.io/badge/dynamic/json.svg?label=macOS&colorB=779922&prefix=&suffix=&query=$.totals[1][1]&uri=http%3A%2F%2Faddins.monodevelop.com%2FProject%2FGetStatsAsync%3Fpid%3D183%26relid%3D3707%26period%3Dperiod%26arg%3D2016-04-16.2018-01-03)](http://addins.monodevelop.com/Project/Index/183)
+[![Windows](https://img.shields.io/badge/dynamic/json.svg?label=Windows&colorB=229988&prefix=&suffix=&query=$.totals[2][1]&uri=http%3A%2F%2Faddins.monodevelop.com%2FProject%2FGetStatsAsync%3Fpid%3D183%26relid%3D3707%26period%3Dperiod%26arg%3D2016-04-16.2018-01-03)](http://addins.monodevelop.com/Project/Index/183)
+
 # Installation
 
 The latests stable versions of WakaTime addin are **[available via GitHub Releases](https://github.com/CodeCavePro/monodevelop-wakatime/releases)**
