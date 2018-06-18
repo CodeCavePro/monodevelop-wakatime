@@ -15,7 +15,7 @@
 	</Dependencies>
 	<Runtime>
 		<Import assembly="MonoDevelop.WakaTime.dll" />
-		<Import assembly="INIFileParser.dll" />
+		<Import assembly="ConfigParser.dll" />
 		<Import assembly="ICSharpCode.SharpZipLib.dll" />
 		<Import assembly="WakaTime.dll" />
 		<Import assembly="Mono.Posix.dll" />
