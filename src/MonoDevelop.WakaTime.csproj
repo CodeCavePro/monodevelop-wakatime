@@ -57,12 +57,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-	<Reference Include="System.Core" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System" />
-    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='Debug'"> 
-      <HintPath>packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath> 
+    <Reference Include="Mono.Posix" Condition="'$(Configuration)'=='Debug'">
+      <HintPath>packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" Condition="'$(Configuration)'=='DebugWin32'">
       <Private>True</Private>
@@ -80,9 +80,9 @@
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Cecil" Condition="'$(Configuration)'=='DebugWin32'"> 
-      <HintPath>packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath> 
-    </Reference> 
+    <Reference Include="Mono.Cecil" Condition="'$(Configuration)'=='DebugWin32'">
+      <HintPath>packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Cecil.Mdb" Condition="'$(Configuration)'=='DebugWin32'">
       <HintPath>packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
@@ -114,12 +114,13 @@
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="ConfigParser"> 
-      <HintPath>packages\Salaros.ConfigParser.0.2.10\lib\net45\ConfigParser.dll</HintPath> 
-    </Reference> 
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ConfigParser">
+      <HintPath>packages\Salaros.ConfigParser.0.3.0\lib\net45\ConfigParser.dll</HintPath>
+    </Reference>
     <Reference Include="WakaTime">
-      <HintPath>packages\WakaTime.8.1.7\lib\net45\WakaTime.dll</HintPath> 
-    </Reference> 
+      <HintPath>packages\WakaTime.8.1.8\lib\net45\WakaTime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="__Manifest" />
@@ -146,7 +147,7 @@
     <Exec Command="mdtool setup pack $(OutputAbsolutePath)MonoDevelop.WakaTime.addin.xml" ContinueOnError="true" WorkingDirectory="$(OutputAbsolutePath)" />
     <ItemGroup>
       <AddinFiles Include="$(OutputPath)\**\*.mpack" />
-    </ItemGroup> 
+    </ItemGroup>
     <Move SourceFiles="@(AddinFiles)" ContinueOnError="true" Condition="'$(Configuration)'=='DebugWin32'" DestinationFiles="@(AddinFiles-&gt;'$(OutputAbsolutePath)\%(Filename)_Windows%(Extension)')" />
   </Target>
   <ProjectExtensions>
