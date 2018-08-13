@@ -109,10 +109,10 @@
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="ConfigParser"> 
-      <HintPath>packages\Salaros.ConfigParser.0.2.10\lib\net45\ConfigParser.dll</HintPath> 
+      <HintPath>packages\Salaros.ConfigParser.0.3.1\lib\net45\ConfigParser.dll</HintPath> 
     </Reference> 
     <Reference Include="WakaTime"> 
-      <HintPath>packages\WakaTime.8.1.7\lib\net45\WakaTime.dll</HintPath> 
+      <HintPath>packages\WakaTime.8.1.9\lib\net45\WakaTime.dll</HintPath> 
     </Reference> 
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
