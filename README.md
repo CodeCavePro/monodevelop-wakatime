@@ -40,8 +40,6 @@ Heads Up! WakaTime depends on [Python](http://www.python.org/getit/) being insta
 
 # Installing via Addin Gallery
 
-## !!! Unfortunately MonoDevelop / Xamarin Studio / Visual Studio for Mac adding gallery is currently broken at the moment (it's not building/publishing fresh copies of addins automatically) !!!
-
 1. Inside MonoDevelop/Xamarin Studio/Visual Studio for Mac, navigate to `Tools` -> `Add-in Manager`
 
 2. Click the `Gallery` tab, then search for `wakatime`.
