@@ -112,7 +112,7 @@
       <HintPath>packages\Salaros.ConfigParser.0.3.1\lib\net45\ConfigParser.dll</HintPath> 
     </Reference> 
     <Reference Include="WakaTime"> 
-      <HintPath>packages\WakaTime.8.1.9\lib\net45\WakaTime.dll</HintPath> 
+      <HintPath>packages\WakaTime.8.1.10\lib\net45\WakaTime.dll</HintPath> 
     </Reference> 
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
