@@ -33,26 +33,17 @@ namespace MonoDevelop.WakaTime
 
         public override void BindEditorEvents()
         {
-            IdeApp.Workbench.DocumentOpened += DocEventsOnDocumentOpened;
             IdeApp.Workbench.ActiveDocumentChanged += ActiveDocumentChanged;
-
-            FileService.FileChanged += SolutionFileChanged;
-            FileService.FileCreated += SolutionFileChanged;
-            FileService.FileRemoved += SolutionFileChanged;
 
             // IdeApp.FocusIn += WindowEventsOnWindowActivated;
             IdeApp.Workspace.SolutionLoaded += SolutionEventsOnOpened;
             IdeApp.ProjectOperations.CurrentSelectedSolutionChanged += SolutionEventsOnOpened;
         }
 
-
-        void DocEventsOnDocumentOpened(object sender, DocumentEventArgs args)
-        {
-            OnDocumentOpened(args.Document.FileName);
-        }
-
         void ActiveDocumentChanged(object sender, EventArgs e)
         {
+            // TODO: dispose these events on previous active document
+
             var document = IdeApp.Workbench.ActiveDocument;
             if (document != null)
             {
@@ -68,13 +59,6 @@ namespace MonoDevelop.WakaTime
         void OnCaretPositionChanged(object sender, EventArgs e)
         {
             OnDocumentOpened(_document.FileName.FullPath);
-        }
-
-        void SolutionFileChanged(object sender, FileEventArgs args)
-        {
-            var docEvent = args.FirstOrDefault(f => !f.IsDirectory);
-            if (docEvent != null)
-                OnDocumentChanged(docEvent.FileName.FullPath);
         }
 
         void SolutionEventsOnOpened(object sender, SolutionEventArgs args)
@@ -125,7 +109,7 @@ namespace MonoDevelop.WakaTime
         public override string GetActiveSolutionPath()
         {
             var solution = GetSolution();
-            var solutionFilePath = (solution != null) 
+            var solutionFilePath = (solution != null)
                 ? solution.FileName
                 : null;
             return (solutionFilePath != null)
@@ -140,12 +124,7 @@ namespace MonoDevelop.WakaTime
 
             if (disposing)
             {
-                IdeApp.Workbench.DocumentOpened -= DocEventsOnDocumentOpened;
                 IdeApp.Workbench.ActiveDocumentChanged -= ActiveDocumentChanged;
-
-                FileService.FileChanged -= SolutionFileChanged;
-                FileService.FileCreated -= SolutionFileChanged;
-                FileService.FileRemoved -= SolutionFileChanged;
 
                 // IdeApp.FocusIn -= WindowEventsOnWindowActivated;
                 IdeApp.Workspace.SolutionLoaded -= SolutionEventsOnOpened;
