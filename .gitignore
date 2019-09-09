@@ -196,3 +196,5 @@ ModelManifest.xml
 src/\.vs/
 
 *.mpack
+
+.vs/
