@@ -96,12 +96,12 @@
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="ConfigParser"> 
-      <HintPath>packages\Salaros.ConfigParser.0.3.2\lib\net45\ConfigParser.dll</HintPath> 
-    </Reference> 
-    <Reference Include="WakaTime"> 
-      <HintPath>packages\WakaTime.8.1.11\lib\net45\WakaTime.dll</HintPath> 
-    </Reference> 
+    <Reference Include="ConfigParser">
+      <HintPath>packages\Salaros.ConfigParser.0.3.2\lib\net45\ConfigParser.dll</HintPath>
+    </Reference>
+    <Reference Include="WakaTime">
+      <HintPath>packages\WakaTime.8.1.11\lib\net45\WakaTime.dll</HintPath>
+    </Reference>
     <Reference Include="MonoDevelop.Core">
       <HintPath>..\lib\8.x\MonoDevelop.Core.dll</HintPath>
     </Reference>
